@@ -1,5 +1,6 @@
 @use './mixin';
 @use './variables' as v;
+@use './typography';
 
 * {
   box-sizing: border-box;
@@ -9,10 +10,10 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 13px;
 
   @include mixin.base {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @include mixin.small {

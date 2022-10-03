@@ -1,0 +1,6 @@
+@use '../../../styles/variables' as v;
+
+.homeWrapper {
+  margin-top: v.$navHeightMobile3;
+  font-family: v.$fontFamilyGillSans;
+}

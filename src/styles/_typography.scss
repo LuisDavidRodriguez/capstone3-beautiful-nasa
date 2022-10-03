@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// https://www.freebestfonts.com/gill-sans-font#google_vignette
+@font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/gillSans/GillSans.otf') format('truetype');
+}
+
+//Light
+@font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/gillSans/GillSans_Light.otf') format('truetype');
+  font-weight: 200;
+}
+
+//Medium
+@font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/gillSans/GillSans_Medium.otf') format('truetype');
+  font-weight: 600;
+}
+
+// Bold
+@font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/gillSans/GillSans_Bold.otf') format('truetype');
+  font-weight: bold;
+}
+
+// Bolder
+@font-face {
+  font-family: 'GillSans';
+  src: url('../fonts/gillSans/GillSans_Heavy.otf') format('truetype');
+  font-weight: bolder;
+}
