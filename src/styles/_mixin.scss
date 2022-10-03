@@ -1,0 +1,37 @@
+@use './functions' as f;
+
+@mixin base {
+  @media screen and (min-width: f.get-break-point("base")) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (min-width: f.get-break-point("small")) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: f.get-break-point("medium")) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: f.get-break-point("large")) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media screen and (min-width: f.get-break-point("xlarge")) {
+    @content;
+  }
+}
+
+@mixin customMin($size) {
+  @media screen and (min-width: ($size+'px')) {
+    @content;
+  }
+}
