@@ -27,8 +27,6 @@
   }
 }
 
-
-
 .links {
   display: flex;
   color: f.get-color('primary');
@@ -37,9 +35,9 @@
   height: 50px;
   align-items: center;
   padding: 5px;
- // when the element is not active still we need to add before as to get the hover effect
- // effect borrowed and adapted from https://css-tricks.com/css-link-hover-effects/
- &::before {
+  // when the element is not active still we need to add before as to get the hover effect
+  // effect borrowed and adapted from https://css-tricks.com/css-link-hover-effects/
+  &::before {
     content: '';
     background-color: transparentize($color:  f.get-color('relax'), $amount: 0.3);
     position: absolute;
@@ -48,7 +46,7 @@
     width: 100%;
     height: 0;
     z-index: -1;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   // when the item is active I want to see the line higer!
@@ -63,10 +61,10 @@
     width: 100%;
     height: 6px;
     z-index: -1;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
-  &:hover::before{
+  &:hover::before {
     bottom: 0;
     height: 100%;
   }
