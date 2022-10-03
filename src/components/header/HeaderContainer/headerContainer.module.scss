@@ -1,0 +1,42 @@
+@use '../../../styles/functions' as f;
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixin';
+
+.videoDiv {
+  // place relative to be able to move the text over the video
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  min-width: 270px;
+  width: 100%;
+
+  .welcomeMessage {
+    position: absolute;
+    width: 95%;
+    max-width: 600px;
+    background-color: transparentize($color: f.get-color('primary'), $amount: 0.2);
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.title {
+  font-family: v.$fontFamilyLato;
+  font-size: 1.2em;
+}
+
+.p1 {
+  font-family: v.$fontFamilyGillSans;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.a1 {
+  color: f.get-color("accentSecondary");
+}
