@@ -1,5 +1,6 @@
 @use './mixin';
 @use './variables' as v;
+@use './typography';
 
 * {
   box-sizing: border-box;
