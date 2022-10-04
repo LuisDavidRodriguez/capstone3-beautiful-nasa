@@ -1,0 +1,21 @@
+@use '../../../styles/functions' as f;
+@use '../../../styles/variables' as v;
+.apodBandContainer {
+  height: 100vh;
+  background-color: f.get-color('background');
+  padding-top: v.$navHeightMobile3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: v.$navHeightMobile3 + 20;
+}
+
+.swiperContainer{
+  width: 100vw;
+}
+
+.title {
+  color: f.get-color('primary');
+  font-size: 3em;
+}

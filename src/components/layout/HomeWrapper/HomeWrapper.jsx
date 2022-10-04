@@ -1,5 +1,5 @@
 import React from 'react';
-import Apod from '../../apod/Apod/Apod';
+import ApodBand from '../../home/ApodBand/ApodBand';
 import './homeWrapper.scss';
 import HeaderContainer from '../../header/HeaderContainer/HeaderContainer';
 
@@ -8,7 +8,7 @@ const HomeWrapper = () => {
   return (
     <div className="homeWrapper">
       <HeaderContainer />
-      <Apod />
+      <ApodBand />
     </div>
   );
 };
