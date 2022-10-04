@@ -1,0 +1,38 @@
+@use '../../../../styles/functions' as f;
+@use '../../../../styles/variables' as v;
+
+.container {
+  height: 100vh;
+  background-color: f.get-color('background');
+  padding-top: v.$navHeightMobile3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: v.$navHeightMobile3 + 20;
+}
+
+.one {
+  background-color: f.get-color('background');
+}
+
+.two {
+  background-image: url('./rover2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: f.get-color('accentSecondary');
+}
+
+.title {
+  color: f.get-color('primary');
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.info {
+  width: 80%;
+  max-width: 900px;
+  font-family: v.$fontFamilyLato;
+  color: f.get-color('primary');
+  margin-bottom: 30px;
+}

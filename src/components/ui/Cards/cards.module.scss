@@ -1,0 +1,55 @@
+@use '../../../styles/functions' as f;
+@use '../../../styles/variables' as v;
+
+$colorTrans: transparentize(f.get-color('primary'), 0.3);
+
+.cardContainer {
+  // background-color: darken($color: f.get-color('background'), $amount: 2) ;
+  background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
+  color: f.get-color('primary');
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px $colorTrans;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  .infoContainer {
+    height: 30%;
+    font-family: v.$fontFamilyGillSans;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .topic {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 1.3em;
+    }
+
+    .info {
+      font-family: v.$fontFamilyLato;
+      font-weight: 400;
+      font-size: 1em;
+    }
+  }
+
+  .picture {
+    display: block;
+    width: 100%;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    height: auto;
+    max-height: 60%;
+  }
+}

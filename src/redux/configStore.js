@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counter/counterSlice';
+import apodReducer from './apod';
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    apod: apodReducer,
   },
 });
 

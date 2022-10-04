@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './headerContainer.module.scss';
+import VideoSimple from '../../ui/video/VideoSimple';
 
 const sourceVideo = 'https://technology.nasa.gov/sites/default/files/2022-08/WebsiteLoopingvideo3.mp4';
 const ariaLabel = 'NASA Technology Transfer Introduction Video';
@@ -7,16 +8,9 @@ const ariaLabel = 'NASA Technology Transfer Introduction Video';
 const HeaderContainer = () => (
   // eslint-disable-next-line jsx-a11y/media-has-caption
   <div className={styles.videoDiv}>
-    <Video />
+    <VideoSimple ariaLabel={ariaLabel} url={sourceVideo} />
     <Message />
   </div>
-);
-
-const Video = () => (
-  <video preload muted autoPlay playsInline loop aria-label={ariaLabel} width="100%">
-    <source src={sourceVideo} type="video/mp4" />
-    Sorry, your browser doesn&apos;t support videos.
-  </video>
 );
 
 const Message = () => (
