@@ -1,9 +1,70 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
 .welcomeSection {
-  width: 100vw;
+  width: 100%;
+  background-color: f.get-color('background');
+  color: f.get-color('primary');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: v.$fontFamilyGillSans;
+  padding: 10px;
 }
 
-.picture {
+.title {
+  margin-top: 50px;
+  font-size: 4.5em;
+  font-weight: 800;
+  text-align: center;
+  background-image: url('./galaxy3.jfif');
+  color: transparent;
+  background-size: 200%;
+  background-position: left bottom;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 50s ease-out;
+
+  &:hover {
+    background-position: left top;
+  }
+}
+
+.subtitle {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+  .dateLabel {
+    font-weight: 400;
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  .descLabel {
+    margin: 20px 0 5px 0;
+    align-self: flex-start;
+    font-size: 1.5em;
+  }
+
+  .explanation {
+    line-height: 1.5em;
+    font-size: 1.3em;
+    font-family: v.$fontFamilyLato;
+  }
+}
+
+.media {
   display: block;
-  width: 100%;
+  width: 90%;
+  max-width: 1200px;
   height: auto;
 }
