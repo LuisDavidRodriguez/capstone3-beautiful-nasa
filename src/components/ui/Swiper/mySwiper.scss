@@ -3,6 +3,7 @@
 
 .mySwiper {
   width: 75vw;
+  height: 800px;
 
   @include mixin.customMin(320){
     width: 90vw;
@@ -42,7 +43,9 @@
 }
 
 .swiper-pagination {
-  padding-bottom: 10px;
+  padding: 5px 0;
+  background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
+  border-radius: 40px;
 }
 
 .swiper-wrapper {

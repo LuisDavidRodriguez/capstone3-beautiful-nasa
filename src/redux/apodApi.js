@@ -1,29 +1,23 @@
 /* eslint-disable no-unused-vars */
 import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
+import { KEY } from './env';
 
 const allApodFetched = createAction('all_apod_fetched');
 
-const KEY = 'ZF68DPHnWhdvWZRpqSUtvTfLOXMiwvOnHCQRLCZL';
 const APOD_BASE = `https://api.nasa.gov/planetary/apod?api_key=${KEY}`;
 const getApodUrlQueryes = (qeryes) => {
+  /* eslint-disable max-len */
   /*
-  Parameter | Type | Default | Description
-
-  date | YYYY-MM-DD | today | The date of the APOD image to retrieve
-
-  start_date | YYYY-MM-DD | none | the start of a date range,
-  when requesting date for a range of dates. Cannot be used with date.
-
-  end_date | YYYY-MM-DD | today | The end of the date range, when used with start_date.
-
-  count | int | none | If this is specified then count randomly chosen images
-  will be returned. Cannot be used with date or start_date and end_date.
-
-  thumbs | bool | False | Return the URL of video thumbnail.
-  If an APOD is not a video, this parameter is ignored.
-
-  api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage
+  Parameter | Type       | Default | Description
+  date      | YYYY-MM-DD | today   | The date of the APOD image to retrieve
+  start_date| YYYY-MM-DD | none    | the start of a date range, when requesting date for a range of dates. Cannot be used with date.
+  end_date  | YYYY-MM-DD | today   | The end of the date range, when used with start_date.
+  count     | int        | none    | If this is specified then count randomly chosen images will be returned. Cannot be used with date or start_date and end_date.
+  thumbs    | bool       | False   | Return the URL of video thumbnail. If an APOD is not a video, this parameter is ignored.
+  api_key   | string     | DEMO_KEY| api.nasa.gov key for expanded usage
   */
+  /* eslint-enable max-len */
+
   const {
     date = null,
     startDate = null,
@@ -72,7 +66,7 @@ const fetchRandomApodByQuantity = createAsyncThunk(allApodFetched, async (quanti
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     // the data is an array
     const less = data.map((apod) => {
       const {
@@ -94,7 +88,7 @@ const fetchRandomApodByQuantity = createAsyncThunk(allApodFetched, async (quanti
       };
     });
 
-    console.log(less);
+    // console.log(less);
     return less;
   } catch (error) {
     console.log(error);

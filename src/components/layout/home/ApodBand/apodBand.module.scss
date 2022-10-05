@@ -17,7 +17,8 @@
 }
 
 .two {
-  background-image: url('./rover2.jpg');
+  // the best are rover 2 and rover 6
+  background-image: url('./rover6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: f.get-color('accentSecondary');
@@ -35,4 +36,5 @@
   font-family: v.$fontFamilyLato;
   color: f.get-color('primary');
   margin-bottom: 30px;
+  font-size: 1.5em;
 }

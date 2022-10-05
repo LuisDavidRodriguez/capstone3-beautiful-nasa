@@ -17,7 +17,7 @@ import 'swiper/css/pagination';
 const MySwiper = (props) => {
   const { cards } = props;
 
-  const slides = cards.map((card) => <SwiperSlide key={card.id}>{card}</SwiperSlide>);
+  const slides = cards.map((card) => <SwiperSlide key={card.key}>{card}</SwiperSlide>);
   return (
     <>
       <Swiper
@@ -74,7 +74,7 @@ const MySwiper = (props) => {
 
           1300: {
             slidesPerView: 3,
-            spaceBetween: 10,
+            spaceBetween: 30,
           },
 
         }}
