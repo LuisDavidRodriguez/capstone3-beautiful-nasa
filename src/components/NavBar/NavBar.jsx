@@ -6,6 +6,7 @@ import nasaLogo from './nasa_logo.png';
 const HOME = 'Home';
 const APOD = 'Apod';
 const ROVER = 'Rover';
+const MEDIA = 'Media';
 
 const NavBar = () => (
   <nav className="navBar">
@@ -14,10 +15,16 @@ const NavBar = () => (
       <NavLink to={HOME} className="links">Home</NavLink>
       <NavLink to={APOD} className="links">Photo of the day!</NavLink>
       <NavLink to={ROVER} className="links">Mars Rover Photos</NavLink>
+      <NavLink to={MEDIA} className="links">NASA Media</NavLink>
     </article>
   </nav>
 );
 
 export default NavBar;
 
-export { HOME, APOD, ROVER };
+export {
+  HOME,
+  APOD,
+  ROVER,
+  MEDIA,
+};

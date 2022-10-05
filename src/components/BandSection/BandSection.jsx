@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './apodBand.module.scss';
-import MySwiper from '../../../ui/Swiper/Swiper';
+import styles from './bandSection.module.scss';
+import MySwiper from '../ui/Swiper/Swiper';
 
-const ApodBand = (props) => {
+const BandSection = (props) => {
   const {
     title,
     info,
@@ -34,9 +34,9 @@ const ApodBand = (props) => {
   );
 };
 
-export default ApodBand;
+export default BandSection;
 
-ApodBand.defaultProps = {
+BandSection.defaultProps = {
   linkTo: '/',
   cards: 'default card',
   title: 'default Title',
@@ -45,7 +45,7 @@ ApodBand.defaultProps = {
   buttonHandler: () => {},
 };
 
-ApodBand.propTypes = {
+BandSection.propTypes = {
   linkTo: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.element),
   title: PropTypes.string,
