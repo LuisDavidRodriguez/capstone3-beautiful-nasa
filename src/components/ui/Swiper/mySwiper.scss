@@ -3,7 +3,7 @@
 
 .mySwiper {
   width: 75vw;
-  height: 800px;
+  padding-bottom: 50px !important;
 
   @include mixin.customMin(320){
     width: 90vw;

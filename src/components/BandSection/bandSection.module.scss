@@ -2,7 +2,7 @@
 @use '../../styles/variables' as v;
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: f.get-color('background');
   padding-top: v.$navHeightMobile3;
   display: flex;

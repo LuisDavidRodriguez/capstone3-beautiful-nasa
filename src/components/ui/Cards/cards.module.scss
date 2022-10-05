@@ -44,12 +44,12 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     }
   }
 
-  .picture {
-    display: block;
-    width: 100%;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    height: auto;
+  .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
     max-height: 60%;
+    min-height: 60%;
   }
 }

@@ -3,8 +3,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import styles from './cards.module.scss';
 import defaultPicture from './default_picture.png';
-import VideoSimple from '../video/VideoSimple';
-import YoutubeEmbed from '../video/YouTube/YouTubeEmbed';
+import MultipleMediaRender from '../MultipleMediaRender/MultipleMediaRender';
 
 const Cards = (props) => {
   let {
@@ -21,18 +20,6 @@ const Cards = (props) => {
   information = `${information.substring(0, 300)}...`;
   altPicture = `${title.substring(0, 30)}...`;
 
-  let mediaComponent = <img src={url} alt={altPicture} className={styles.picture} />;
-
-  if (mediaType === 'video') {
-    const isYoutube = url.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
-
-    if (isYoutube) {
-      mediaComponent = <YoutubeEmbed embedUrl={url} />;
-    } else {
-      mediaComponent = <VideoSimple ariaLabel={altPicture} url={url} />;
-    }
-  }
-
   return (
     <section className={styles.cardContainer}>
       <article className={styles.infoContainer}>
@@ -40,7 +27,13 @@ const Cards = (props) => {
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.info}>{information}</p>
       </article>
-      {mediaComponent}
+      <div className={styles.media}>
+        <MultipleMediaRender
+          altPicture={altPicture}
+          mediaType={mediaType}
+          url={url}
+        />
+      </div>
     </section>
   );
 };

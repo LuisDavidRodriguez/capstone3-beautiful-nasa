@@ -1,0 +1,8 @@
+.default-picture {
+  display: block;
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  height: auto;
+  max-height: 100%;
+}

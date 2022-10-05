@@ -182,7 +182,7 @@ const roverFetchPhotos = createAsyncThunk(roverPhotosFetched, async (queryes = {
     const response = await fetch(url);
     const data = await response.json();
     const { photos } = data;
-    console.log(photos);
+    // console.log(photos);
     // the data is an array
     return photos;
   } catch (error) {

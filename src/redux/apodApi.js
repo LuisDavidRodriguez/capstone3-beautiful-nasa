@@ -2,7 +2,7 @@
 import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import { KEY } from './env';
 
-const allApodFetched = createAction('all_apod_fetched');
+const randomApodFetched = createAction('random_apod_fetched');
 
 const APOD_BASE = `https://api.nasa.gov/planetary/apod?api_key=${KEY}`;
 const getApodUrlQueryes = (qeryes) => {
@@ -47,18 +47,20 @@ const getApodUrlQueryes = (qeryes) => {
   return result;
 };
 
-const fetchTodayApod = createAsyncThunk(allApodFetched, async () => {
-  console.log('fetching apods...');
+const fetchTodayApod = async () => {
+  console.log('fetching today apod...');
   try {
     const response = await fetch(APOD_BASE);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
+    return data;
   } catch (error) {
     console.log(error);
+    return {};
   }
-});
+};
 
-const fetchRandomApodByQuantity = createAsyncThunk(allApodFetched, async (quantity = 20) => {
+const fetchRandomApodByQuantity = createAsyncThunk(randomApodFetched, async (quantity = 20) => {
   console.log('fetching Quantity apods...');
   // Accoording with documentation If this is specified then count randomly
   // chosen images will be returned. Cannot be used with date or start_date and end_date.

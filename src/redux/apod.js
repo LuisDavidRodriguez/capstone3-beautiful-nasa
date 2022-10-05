@@ -1,14 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchTodayApod } from './apodApi';
+import { fetchRandomApodByQuantity } from './apodApi';
 
-const slice = createSlice({
-  name: 'apod',
+const sliceRandom = createSlice({
+  name: 'random',
   initialState: [],
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchTodayApod.fulfilled, (state, action) => action.payload);
-    builder.addCase(fetchTodayApod.pending, () => 'loading');
+    builder.addCase(fetchRandomApodByQuantity.fulfilled, (state, action) => action.payload);
+    builder.addCase(fetchRandomApodByQuantity.pending, () => 'loading');
   },
 });
 
-export default slice.reducer;
+const randomReducer = sliceRandom.reducer;
+// eslint-disable-next-line import/prefer-default-export
+export { randomReducer };
