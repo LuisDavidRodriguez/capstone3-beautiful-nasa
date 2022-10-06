@@ -7,7 +7,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: v.$fontFamilyRobotoSlab;
+  font-family: v.$fontFamilyLato;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: v.$fontFamilyGillSans;
 }
 
 html {

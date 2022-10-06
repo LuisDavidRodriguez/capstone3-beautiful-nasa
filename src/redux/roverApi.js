@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import { KEY } from './env';
@@ -156,14 +157,12 @@ const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover =
 
   const url = getUrlManifest(rover);
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
+    const data = await fetchHelper(url);
     // the data is an array
-    return [];
+    return data;
   } catch (error) {
     console.log(error);
-    return [];
+    return 'error';
   }
 });
 
@@ -175,21 +174,25 @@ const roverFetchPhotos = createAsyncThunk(roverPhotosFetched, async (queryes = {
     page = null,
   } = queryes;
 
-  console.log('fetching RoverPhotos...');
   const url = getRoverUrlQueryes({ sol, page });
-  console.log(url);
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await fetchHelper(url);
     const { photos } = data;
     // console.log(photos);
     // the data is an array
     return photos;
   } catch (error) {
     console.log(error);
-    return [];
+    return 'error';
   }
 });
+
+async function fetchHelper(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Error in fetch');
+  const data = await response.json();
+  return data;
+}
 
 // eslint-disable-next-line import/prefer-default-export
 export { roverFetchManifest, roverFetchPhotos };

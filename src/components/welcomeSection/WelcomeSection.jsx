@@ -19,10 +19,6 @@ const WelcomeSection = () => {
     }
   });
 
-  if (!todayIsLoading) {
-    console.log(todayApod);
-  }
-
   return (
     <section className={styles.welcomeSection}>
       <h3 className={styles.title}>The Astronomy Picture of the Day is:</h3>
@@ -50,21 +46,5 @@ const WelcomeSection = () => {
     </section>
   );
 };
-
-// const Information = (props) => {
-//   // eslint-disable-next-line react/prop-types
-//   const { title, explanation, date } = props;
-//   return (
-//     <article className={styles.information}>
-//       <h3 className={styles.subtitle}>{title}</h3>
-//       <p className={styles.dateLabel}>
-//         {'Date: '}
-//         <span className={styles.dateValue}>{date}</span>
-//       </p>
-//       <h4 className={styles.descLabel}>Description:</h4>
-//       <p className={styles.explanation}>{explanation}</p>
-//     </article>
-//   );
-// };
 
 export default WelcomeSection;

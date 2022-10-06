@@ -1,0 +1,15 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/functions' as f;
+
+.container {
+  width: 100%;
+  background-color: f.get-color('relax');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: v.$navHeightMobile3;
+}
+
+.title {
+  font-size: 3em;
+}

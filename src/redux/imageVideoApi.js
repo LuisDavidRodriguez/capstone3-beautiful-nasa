@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
@@ -235,20 +236,16 @@ const getAssetsByIdQueryes = (qeryes) => {
 };
 
 const imgVidFetchQueryes = createAsyncThunk(mediaFetched, async (queryes = {}) => {
-  console.log('fetching Image and Videos...');
   const url = getImgVideoUrlQueryes(queryes);
-  console.log(url);
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await fetchHelper(url);
     const { collection } = data;
     // I will prune some data that I not need
     const { items, links } = collection;
-    console.log({ items, links });
     return { items, links };
   } catch (error) {
     console.log(error);
-    return {};
+    return 'error';
   }
 });
 
@@ -257,15 +254,21 @@ const mediaByIdFetch = createAsyncThunk(mediaIdFetched, async (queryes = {}) => 
   const url = getAssetsByIdQueryes(queryes);
   console.log(url);
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await fetchHelper(url);
     console.log(data);
     // the data is an array
     return [3];
   } catch (error) {
     console.log(error);
-    return [];
+    return 'error';
   }
 });
+
+async function fetchHelper(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Error in fetch');
+  const data = await response.json();
+  return data;
+}
 
 export { imgVidFetchQueryes, mediaByIdFetch };
