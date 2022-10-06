@@ -1,49 +1,23 @@
 @use '../../../styles/functions' as f;
 @use '../../../styles/mixin';
 
-.mySwiper {
-  width: 75vw;
+.my-swiper-grid {
+  width: 90%;
+  height: 1000px;
   padding-bottom: 50px !important;
 
-  @include mixin.customMin(320){
-    width: 90vw;
-  }
-
-  @include mixin.customMin(480){
-    width: 95vw;
-  }
-
-  // @include mixin.customMin(640){
-  //   width: 610px;
+  // @include mixin.customMin(320){
+  //   width: 90vw;
   // }
 
-  // @include mixin.customMin(768){
-  //   width: 750px;
-  // }
-
-  // @include mixin.customMin(900){
-  //   width: 880px;
-  // }
-
-  // @include mixin.customMin(1100){
-  //   width: 1080px;
-  // }
-
-  // @include mixin.customMin(1300){
-  //   width: 1280px;
-  // }
-
-  // @include mixin.customMin(1500){
+  // @include mixin.customMin(480){
   //   width: 95vw;
-  // }
-
-  // @include mixin.customMin(1800){
-  //   width: 1750px;
   // }
 
   // to avoid conflict in css if you have 2 or more swypers with different css rules
   // you will se that you can affect others swypers
   // you can nest the code and change the parent slide class
+
   .swiper-pagination {
     padding: 5px 0;
     background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
@@ -56,5 +30,9 @@
   
   .swiper-pagination-bullet {
     background-color: f.get-color('accentSecondary') !important;
+  }
+  
+  .swiper-slide {
+    height: calc((100% - 30px) / 2) !important;
   }
 }

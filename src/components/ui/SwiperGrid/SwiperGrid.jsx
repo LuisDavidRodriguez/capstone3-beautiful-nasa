@@ -6,44 +6,36 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper';
+import { Grid, Pagination } from 'swiper';
 import { PropTypes } from 'prop-types';
-import './mySwiper.scss';
 // Import Swiper styles
+import './swiperGrid.scss';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/grid';
 
-const MySwiper = (props) => {
+const MySwiperGrid = (props) => {
   const { cards } = props;
 
-  const slides = cards.map((card) => <SwiperSlide className="type1" key={card.key}>{card}</SwiperSlide>);
+  const slides = cards.map((card) => <SwiperSlide key={card.key}>{card}</SwiperSlide>);
   return (
     <>
       <Swiper
-        effect="coverflow"
-        className="mySwiper"
+        className="my-swiper-grid"
         tag="section"
         wrapperTag="ul"
-        slidesPerView="auto"
-        spaceBetween={0}
-        navigation
-        grabCursor
-        centeredSlides
-        modules={[Pagination, EffectCoverflow]}
+        slidesPerView={1.1}
+        grid={{
+          rows: 2,
+        }}
+        spaceBetween={10}
+        modules={[Pagination, Grid]}
         pagination={{
           clickable: true,
         }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 1,
-          depth: 300,
-          modifier: 1,
-          slideShadows: true,
-        }}
         breakpoints={{
           320: {
-            slidesPerView: 1.1,
+            slidesPerView: 1.2,
             spaceBetween: 10,
           },
           // when window width is >= 480px
@@ -74,7 +66,7 @@ const MySwiper = (props) => {
 
           1300: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 15,
           },
 
         }}
@@ -89,12 +81,12 @@ const MySwiper = (props) => {
   );
 };
 
-export default MySwiper;
+export default MySwiperGrid;
 
-MySwiper.defaultProps = {
+MySwiperGrid.defaultProps = {
   cards: 'Slide',
 };
 
-MySwiper.propTypes = {
+MySwiperGrid.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.element),
 };

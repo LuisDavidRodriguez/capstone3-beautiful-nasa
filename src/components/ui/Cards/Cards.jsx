@@ -17,7 +17,7 @@ const Cards = (props) => {
 
   // protect against bigger texts
   title = `${title.substring(0, 30)}`;
-  information = `${information.substring(0, 300)}...`;
+  information = `${information.substring(0, 200)}...`;
   altPicture = `${title.substring(0, 30)}...`;
 
   return (
