@@ -5,26 +5,44 @@ const FormFilter = (props) => {
   const { reportInputs, buttonHandler1, buttonText1 } = props;
   const [textInput, setTextInput] = useState('');
   const [dateInput, setDateInput] = useState('');
+  const [selectInput, setSelectInput] = useState('All');
 
   const onChanegeManager = (e) => {
     const { name } = e.target;
     const { value } = e.target;
     if (name === 'dateInput') {
       setDateInput(value);
-      reportInputs({ date: value, text: '' });
+      reportInputs({ date: value, text: '', mediaType: '' });
     }
 
     if (name === 'textInput') {
       setTextInput(value);
-      reportInputs({ text: value, date: '' });
+      reportInputs({ text: value, date: '', mediaType: '' });
     }
+
+    if (name === 'selectInput') {
+      setSelectInput(value);
+      reportInputs({ text: '', date: '', mediaType: value });
+    }
+  };
+
+  const buttonClick = () => {
+    setTextInput('');
+    setDateInput('');
+    setSelectInput('All');
+    buttonHandler1();
   };
 
   return (
     <form>
       <input name="textInput" type="text" placeholder="search by text in this period" onChange={onChanegeManager} value={textInput} />
       <input name="dateInput" type="date" onChange={onChanegeManager} value={dateInput} />
-      <button type="button" onClick={buttonHandler1}>{buttonText1}</button>
+      <select value={selectInput} name="selectInput" onChange={onChanegeManager}>
+        <option value="All">All</option>
+        <option value="image">Image</option>
+        <option value="video">Video</option>
+      </select>
+      <button type="button" onClick={buttonClick}>{buttonText1}</button>
     </form>
   );
 };

@@ -1,0 +1,7 @@
+@use '../../../styles/functions' as f;
+.container {
+  background-color: f.get-color('background');
+  height: 80vh;
+  width: 100%;
+  padding: 50px;
+}

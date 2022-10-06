@@ -1,13 +1,12 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import Rover from '../../rover/Rover/Rover';
+import RoverWelcome from '../../roverWelcome/RoverWelcome/RoverWelcome';
 import './roverWrapper.scss';
 
 const RoverWrapper = () => {
   return (
     <div className="roverWrapper">
-      RoverWrapper
-      <Rover />
+      <RoverWelcome />
     </div>
   );
 };

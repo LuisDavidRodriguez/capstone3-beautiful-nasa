@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { fetchRandomApodByQuantity } from '../../../redux/apodApi';
+import { fetchRandomApodByQuantity, fetchDateApod } from '../../../redux/apodApi';
 import { ROVER, APOD, MEDIA } from '../../NavBar/NavBar';
 import { roverFetchPhotos } from '../../../redux/roverApi';
 import { imgVidFetchQueryes } from '../../../redux/imageVideoApi';
@@ -9,6 +9,7 @@ import BandSection from '../../BandSection/BandSection';
 import HeaderContainer from '../../header/HeaderContainer/HeaderContainer';
 import Cards from '../../ui/Cards/Cards';
 import * as helper from '../../../helpers/cardsCreators';
+import * as dateHelper from '../../../helpers/dates';
 import './homeWrapper.scss';
 
 const title = 'Astronomy Picture of the Day (APOD)';
@@ -23,6 +24,7 @@ const HomeWrapper = () => {
   const apodRandom = useSelector((state) => state.randomApod, shallowEqual);
   const roverPhotos = useSelector((state) => state.roverPhotos);
   const nasaImgVideo = useSelector((state) => state.imgVideo);
+  const statusAllApod = useSelector((state) => state.allApods.status);
 
   useEffect(() => {
     if (apodRandom.length === 0) {
@@ -35,6 +37,13 @@ const HomeWrapper = () => {
 
     if (Object.keys(nasaImgVideo).length === 0) {
       dispatch(imgVidFetchQueryes({ yearStart: '2022', page: 1 }));
+    }
+
+    if (statusAllApod === 'empty') {
+      // I will fetch the data of all the appods here becase
+      // the nasa API is so slow when retreve the info by dates
+      // reaching up tu 30s in the fetch
+      dispatch(fetchDateApod(dateHelper.getMonthAgo(-100)));
     }
   });
 

@@ -14,22 +14,63 @@ const sliceRandom = createSlice({
 const sliceAll = createSlice({
   name: 'all',
   initialState: {
-    filters: { show: 'ALL', text: '', date: '' },
+    filters: {
+      show: 'ALL',
+      text: '',
+      date: '',
+      mediaType: '',
+    },
     data: [],
     status: 'empty',
   },
 
   reducers: {
     setDateFilter(state, action) {
-      return { ...state, filters: { show: 'DATE', text: '', date: action.payload } };
+      return {
+        ...state,
+        filters: {
+          show: 'DATE',
+          text: '',
+          date: action.payload,
+          mediaType: '',
+        },
+      };
     },
 
     setTextFilter(state, action) {
-      return { ...state, filters: { show: 'TEXT', text: action.payload, date: '' } };
+      return {
+        ...state,
+        filters: {
+          show: 'TEXT',
+          text: action.payload,
+          date: '',
+          mediaType: '',
+        },
+      };
+    },
+
+    setMediaFilter(state, action) {
+      return {
+        ...state,
+        filters: {
+          show: 'MEDIA',
+          text: '',
+          date: '',
+          mediaType: action.payload,
+        },
+      };
     },
 
     showAll(state) {
-      return { ...state, filters: { show: 'ALL', text: '', date: '' } };
+      return {
+        ...state,
+        filters: {
+          show: 'ALL',
+          text: '',
+          date: '',
+          mediaType: '',
+        },
+      };
     },
   },
 

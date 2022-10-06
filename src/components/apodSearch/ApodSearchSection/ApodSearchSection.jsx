@@ -10,7 +10,6 @@ import Cards from '../../ui/Cards/Cards';
 import FormFilter from '../FormFilter/FormFilter';
 
 const ApodSearchSection = () => {
-  const title = 'Now lets go to search something';
   const dispatch = useDispatch();
   const allApodsStatus = useSelector((state) => state.allApods.status);
   const allApods = useSelector((state) => filterState(state));
@@ -21,13 +20,13 @@ const ApodSearchSection = () => {
     }
   });
 
-  const handleFormData = ({ text, date }) => {
-    console.log(text, date);
-
+  const handleFormData = ({ text, date, mediaType }) => {
     if (text !== '') {
       dispatch(allApodsActions.setTextFilter(text));
     } else if (date !== '') {
       dispatch(allApodsActions.setDateFilter(date));
+    } else if (mediaType === 'image' || mediaType === 'video') {
+      dispatch(allApodsActions.setMediaFilter(mediaType));
     } else {
       dispatch(allApodsActions.showAll());
     }
@@ -37,7 +36,7 @@ const ApodSearchSection = () => {
 
   return (
     <section className={styles.container}>
-      <h3 className={styles.title}>{title}</h3>
+      <h3 className={styles.title}>Now lets go to search something</h3>
       <FormFilter
         reportInputs={handleFormData}
         buttonHandler1={() => dispatch(allApodsActions.showAll())}
@@ -49,7 +48,12 @@ const ApodSearchSection = () => {
 };
 
 function filterState(state) {
-  const { show, date, text } = state.allApods.filters;
+  const {
+    show,
+    date,
+    text,
+    mediaType,
+  } = state.allApods.filters;
 
   if (show === 'TEXT') {
     // we want to filter in both title and description
@@ -66,6 +70,10 @@ function filterState(state) {
 
   if (show === 'DATE') {
     return state.allApods.data.filter((item) => item.date === date);
+  }
+
+  if (show === 'MEDIA') {
+    return state.allApods.data.filter((item) => item.mediaType === mediaType);
   }
 
   // case of all
