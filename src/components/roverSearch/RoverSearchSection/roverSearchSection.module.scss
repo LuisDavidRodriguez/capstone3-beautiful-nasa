@@ -1,0 +1,13 @@
+@use '../../../styles/functions' as f;
+@use '../../../styles/variables' as v;
+
+.container {
+  padding: 20px 0;
+  background-color: f.get-color('accentSecondary');
+  height: 800px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4em;
+}

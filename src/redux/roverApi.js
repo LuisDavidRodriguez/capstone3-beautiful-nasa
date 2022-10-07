@@ -7,6 +7,8 @@ const ROVER_BASE = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/pho
 const roverManifestFetched = createAction('rover_manifest_fetched');
 const roverPhotosFetched = createAction('rover_photos_fetched');
 
+// used to will the names of the rovers availables
+const MAP_ROVER_NAMES = ['curiosity', 'opportunity', 'spirit'];
 // this data is about the cameras availables in the Rover missions
 // you can find the tabla herer
 // https://api.nasa.gov/
@@ -104,10 +106,7 @@ An example entry from a sol at /manifests/Curiosity might look like:
 This would tell you that this rover, on sol 0, took 3702 photos,
 and those are from among the CHEMCAM, FHAZ, MARDI, and RHAZ cameras.
 */
-const getUrlManifest = (rover = 0) => {
-  const roverNames = { 0: 'curiosity', 1: 'opportunity', 2: 'opportunity' };
-  return `https://api.nasa.gov/mars-photos/api/v1/manifests/${roverNames[rover]}?api_key=${KEY}`;
-};
+const getUrlManifest = (rover = 'Curiosity') => `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${KEY}`;
 
 const getRoverUrlQueryes = (qeryes) => {
   /*
@@ -152,14 +151,14 @@ const getRoverUrlQueryes = (qeryes) => {
   return result;
 };
 
-const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover = 0) => {
+const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover = 'Curiosity') => {
   console.log('fetching RoverManifest...');
 
   const url = getUrlManifest(rover);
   try {
     const data = await fetchHelper(url);
     // the data is an array
-    return data;
+    return data.photo_manifest;
   } catch (error) {
     console.log(error);
     return 'error';

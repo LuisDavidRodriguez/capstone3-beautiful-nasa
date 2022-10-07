@@ -8,9 +8,33 @@ const sliceManifest = createSlice({
     data: [],
     filters: {
       show: 'ALL',
+      camera: '',
+      date: '',
     },
   },
-  reducers: {},
+  reducers: {
+    setDateFilter(state, action) {
+      return {
+        ...state,
+        filters: {
+          show: 'DATE',
+          camera: '',
+          date: action.payload,
+        },
+      };
+    },
+
+    setCameraFilter(state, action) {
+      return {
+        ...state,
+        filters: {
+          show: 'CAMERA',
+          camera: action.payload,
+          date: '',
+        },
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(roverFetchManifest.fulfilled, (state, action) => (
       { ...state, data: action.payload, status: 'fulfilled' }
@@ -34,5 +58,6 @@ const slicePhotos = createSlice({
 
 const reducerManifest = sliceManifest.reducer;
 const reducerPhotos = slicePhotos.reducer;
+const manifestActions = sliceManifest.actions;
 
-export { reducerManifest, reducerPhotos };
+export { reducerManifest, reducerPhotos, manifestActions };
