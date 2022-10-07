@@ -126,7 +126,7 @@ const getRoverUrlQueryes = (qeryes) => {
     api_key    |string     |DEMO_KEY  |api.nasa.gov key for expanded usage
   */
   const {
-    sol = 1000,
+    sol = null,
     earthDate = null,
     camera = null,
     page = null,
@@ -188,15 +188,15 @@ const roverFetchRandomPhotos = createAsyncThunk(roverRandomFetched, async (query
   }
 });
 
-const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queryes = {}) => {
+const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queries) => {
   const {
     sol = null,
     earthDate = null,
     camera = null,
     page = null,
-  } = queryes;
+  } = queries;
 
-  const url = getRoverUrlQueryes({ sol, page });
+  const url = getRoverUrlQueryes({ earthDate });
   try {
     const data = await fetchHelper(url);
     const { photos } = data;
@@ -209,6 +209,28 @@ const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queryes = 
   }
 });
 
+const roverFetchAPI = async (queries) => {
+  const {
+    sol = null,
+    earthDate = null,
+    camera = null,
+    page = null,
+  } = queries;
+
+  const url = getRoverUrlQueryes({ earthDate });
+
+  try {
+    const data = await fetchHelper(url);
+    const { photos } = data;
+    // console.log(photos);
+    // the data is an array
+    return photos;
+  } catch (error) {
+    console.log(error);
+    return 'error';
+  }
+};
+
 async function fetchHelper(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error('Error in fetch');
@@ -217,4 +239,9 @@ async function fetchHelper(url) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { roverFetchManifest, roverFetchRandomPhotos, roverFetchGeneral };
+export {
+  roverFetchManifest,
+  roverFetchRandomPhotos,
+  roverFetchGeneral,
+  roverFetchAPI,
+};
