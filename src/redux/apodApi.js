@@ -60,7 +60,6 @@ const fetchTodayApod = async () => {
     const data = await fetchHelper(APOD_BASE);
     return data;
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 };
@@ -94,14 +93,12 @@ const fetchRandomApodByQuantity = createAsyncThunk(randomApodFetched, async (qua
 
     return less;
   } catch (error) {
-    console.log(error);
     return [];
   }
 });
 
 // eslint-disable-next-line max-len
 const fetchDateApod = createAsyncThunk(dateApodFetched, async (startDate = dateHelper.getMonthAgo()) => {
-  console.log('fetch by time');
   // "msg": "Date must be between Jun 16, 1995 and actual date",
   // if you spicify an strt date with out end date the sistem will take the currentDate as endDate
   // becareful you can not reterive to many days behind the API delivers an error
@@ -115,7 +112,6 @@ const fetchDateApod = createAsyncThunk(dateApodFetched, async (startDate = dateH
   const url = getApodUrlQueryes({ startDate });
   try {
     const data = await fetchHelper(url);
-    console.log(data);
     // the data is an array
     const less = data.map((apod) => {
       const {
@@ -140,7 +136,6 @@ const fetchDateApod = createAsyncThunk(dateApodFetched, async (startDate = dateH
     // console.log(less);
     return less;
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });

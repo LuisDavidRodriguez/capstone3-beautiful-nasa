@@ -18,9 +18,6 @@ const RoverViewSection = () => {
     }
   });
 
-  console.log(generalPhotos);
-  console.log(dateFilter);
-
   const cards = cardHelpers.createCardsRover(generalPhotos, Cards);
   return (
     <MySwiperGrid

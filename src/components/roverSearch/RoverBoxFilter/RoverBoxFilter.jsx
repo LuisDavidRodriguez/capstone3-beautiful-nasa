@@ -7,7 +7,6 @@ import styles from './roverBoxFilter.module.scss';
 
 const RoverBoxFilter = (props) => {
   const { initial } = props;
-  console.log('initial recived', initial);
   const dispatch = useDispatch();
   const [roverSelector, setRoverSelector] = useState(initial);
 

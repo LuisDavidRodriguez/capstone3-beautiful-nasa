@@ -77,10 +77,6 @@ const MySwiper = (props) => {
           },
 
         }}
-        onInit={(swiper) => console.log('Swiper initialized!', swiper)}
-        onSlideChange={(swiper) => console.log('Slide index changed to: ', swiper.activeIndex)}
-        onSwiper={(swiper) => console.log(swiper)}
-        onReachEnd={() => console.log('Swiper end reached')}
       >
         {slides}
       </Swiper>

@@ -244,22 +244,17 @@ const imgVidFetchQueryes = createAsyncThunk(mediaFetched, async (queryes = {}) =
     const { items, links } = collection;
     return { items, links };
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });
 
 const mediaByIdFetch = createAsyncThunk(mediaIdFetched, async (queryes = {}) => {
-  console.log('fetching Assets by Id...');
   const url = getAssetsByIdQueryes(queryes);
-  console.log(url);
   try {
     const data = await fetchHelper(url);
-    console.log(data);
     // the data is an array
     return [3];
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });
