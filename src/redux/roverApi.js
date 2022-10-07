@@ -1,83 +1,11 @@
 /* eslint-disable no-use-before-define */
-/* eslint-disable no-unused-vars */
-import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
+
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { KEY } from './env';
 
-const ROVER_BASE = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${KEY}`;
 const roverManifestFetched = createAction('rover_manifest_fetched');
 const roverRandomFetched = createAction('rover_random_fetched');
 const roverGeneralPhotos = createAction('rover_general_fetched');
-
-// used to will the names of the rovers availables
-const MAP_ROVER_NAMES = ['curiosity', 'opportunity', 'spirit'];
-// this data is about the cameras availables in the Rover missions
-// you can find the tabla herer
-// https://api.nasa.gov/
-const roverCameras = [
-  {
-    abbreviaton: 'FHAZ',
-    camera: 'Front Hazard Avoidance Camera',
-    curiosity: true,
-    opportunity: true,
-    spirit: true,
-  },
-  {
-    abbreviaton: 'RHAZ',
-    camera: 'Rear Hazard Avoidance Camera',
-    curiosity: true,
-    opportunity: true,
-    spirit: true,
-  },
-  {
-    abbreviaton: 'MAST',
-    camera: 'Mast Camera',
-    curiosity: true,
-    opportunity: false,
-    spirit: false,
-  },
-  {
-    abbreviaton: 'CHEMCAM',
-    camera: 'Chemistry and Camera Complex',
-    curiosity: true,
-    opportunity: false,
-    spirit: false,
-  },
-  {
-    abbreviaton: 'MAHLI',
-    camera: 'Mars Hand Lens Imager',
-    curiosity: true,
-    opportunity: false,
-    spirit: false,
-  },
-  {
-    abbreviaton: 'MARDI',
-    camera: 'Mars Descent Imager',
-    curiosity: true,
-    opportunity: false,
-    spirit: false,
-  },
-  {
-    abbreviaton: 'NAVCAM',
-    camera: 'Navigation Camera',
-    curiosity: true,
-    opportunity: true,
-    spirit: true,
-  },
-  {
-    abbreviaton: 'PANCAM',
-    camera: 'Panoramic Camera',
-    curiosity: false,
-    opportunity: true,
-    spirit: true,
-  },
-  {
-    abbreviaton: 'MINITES',
-    camera: 'Miniature Thermal Emission Spectrometer (Mini-TES)',
-    curiosity: false,
-    opportunity: true,
-    spirit: true,
-  },
-];
 
 /*
 Mission Manifest
@@ -130,9 +58,10 @@ const getRoverUrlQueryes = (qeryes) => {
     earthDate = null,
     camera = null,
     page = null,
+    rover = 'Curiosity',
   } = qeryes;
 
-  let result = ROVER_BASE;
+  let result = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${KEY}`;
 
   // either sol or earth date could exist in the query
   if (sol) {
@@ -161,7 +90,6 @@ const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover =
     // the data is an array
     return data.photo_manifest;
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });
@@ -169,34 +97,22 @@ const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover =
 const roverFetchRandomPhotos = createAsyncThunk(roverRandomFetched, async (queryes = {}) => {
   const {
     sol = 1000,
-    earthDate = null,
-    camera = null,
     page = null,
   } = queryes;
 
   const url = getRoverUrlQueryes({ sol, page });
-  console.log(url);
   try {
     const data = await fetchHelper(url);
     const { photos } = data;
-    // console.log(photos);
     // the data is an array
     return photos;
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });
 
 const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queries) => {
-  const {
-    sol = null,
-    earthDate = null,
-    camera = null,
-    page = null,
-  } = queries;
-
-  const url = getRoverUrlQueryes({ earthDate });
+  const url = getRoverUrlQueryes(queries);
   try {
     const data = await fetchHelper(url);
     const { photos } = data;
@@ -204,32 +120,9 @@ const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queries) =
     // the data is an array
     return photos;
   } catch (error) {
-    console.log(error);
     return 'error';
   }
 });
-
-const roverFetchAPI = async (queries) => {
-  const {
-    sol = null,
-    earthDate = null,
-    camera = null,
-    page = null,
-  } = queries;
-
-  const url = getRoverUrlQueryes({ earthDate });
-
-  try {
-    const data = await fetchHelper(url);
-    const { photos } = data;
-    // console.log(photos);
-    // the data is an array
-    return photos;
-  } catch (error) {
-    console.log(error);
-    return 'error';
-  }
-};
 
 async function fetchHelper(url) {
   const response = await fetch(url);
@@ -243,5 +136,4 @@ export {
   roverFetchManifest,
   roverFetchRandomPhotos,
   roverFetchGeneral,
-  roverFetchAPI,
 };

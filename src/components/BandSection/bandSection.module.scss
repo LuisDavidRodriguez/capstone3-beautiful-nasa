@@ -10,6 +10,37 @@
   align-items: center;
   justify-content: center;
   padding-top: v.$navHeightMobile3 + 20;
+
+  .title {
+    color: f.get-color('primary');
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .info {
+    width: 80%;
+    max-width: 900px;
+    font-family: v.$fontFamilyLato;
+    color: f.get-color('primary');
+    margin-bottom: 30px;
+    font-size: 1.5em;
+  }
+  
+  .viewMore {
+    margin: 5px 0 30px 0;
+    color: f.get-color('primary');
+    font-weight: 600;
+    font-size: 1.2em;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  button {
+    margin: 5px 0 30px 0;
+  }
+
 }
 
 .one {
@@ -29,19 +60,4 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: f.get-color('relax');
-}
-
-.title {
-  color: f.get-color('primary');
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-.info {
-  width: 80%;
-  max-width: 900px;
-  font-family: v.$fontFamilyLato;
-  color: f.get-color('primary');
-  margin-bottom: 30px;
-  font-size: 1.5em;
 }

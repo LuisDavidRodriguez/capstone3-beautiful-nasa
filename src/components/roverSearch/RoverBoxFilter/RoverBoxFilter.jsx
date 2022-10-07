@@ -18,7 +18,7 @@ const RoverBoxFilter = (props) => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
       <label className={styles.labelSelector} htmlFor="roverSelector">Rover:</label>
       <select className={styles.selector} id="roverSelector" value={roverSelector} onChange={handleChange}>

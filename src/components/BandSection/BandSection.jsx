@@ -28,8 +28,8 @@ const BandSection = (props) => {
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.info}>{info}</p>
       <MySwiper cards={cards} />
-      <NavLink to={`/${linkTo}`} className="links">View More</NavLink>
-      <button type="button" onClick={buttonHandler}>Load New random</button>
+      {linkTo !== '' && <NavLink to={`/${linkTo}`} className={styles.viewMore}>Go to section</NavLink>}
+      { buttonHandler !== null && <button className="btn btn-secondary" type="button" onClick={buttonHandler}>Load New random</button>}
     </section>
   );
 };
@@ -37,12 +37,12 @@ const BandSection = (props) => {
 export default BandSection;
 
 BandSection.defaultProps = {
-  linkTo: '/',
+  linkTo: '',
   cards: 'default card',
   title: 'default Title',
   info: 'default info',
   color: 'one',
-  buttonHandler: () => {},
+  buttonHandler: null,
 };
 
 BandSection.propTypes = {

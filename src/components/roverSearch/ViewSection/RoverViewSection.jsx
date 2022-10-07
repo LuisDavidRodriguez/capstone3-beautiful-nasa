@@ -13,8 +13,8 @@ const RoverViewSection = () => {
 
   useEffect(() => {
     if (generalPhotosStatus === 'reFetch') {
-      const { date } = dateFilter;
-      dispatch(roverFetchGeneral({ earthDate: date }));
+      const { date, rover } = dateFilter;
+      dispatch(roverFetchGeneral({ earthDate: date, rover }));
     }
   });
 

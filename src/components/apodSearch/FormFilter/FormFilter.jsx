@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
+import styles from './formFilter.module.scss';
 
 const FormFilter = (props) => {
   const { reportInputs, buttonHandler1, buttonText1 } = props;
@@ -34,15 +35,15 @@ const FormFilter = (props) => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       <input name="textInput" type="text" placeholder="search by text in this period" onChange={onChanegeManager} value={textInput} />
       <input name="dateInput" type="date" onChange={onChanegeManager} value={dateInput} />
-      <select value={selectInput} name="selectInput" onChange={onChanegeManager}>
+      <select className={styles.selector} value={selectInput} name="selectInput" onChange={onChanegeManager}>
         <option value="All">All</option>
         <option value="image">Image</option>
         <option value="video">Video</option>
       </select>
-      <button type="button" onClick={buttonClick}>{buttonText1}</button>
+      <button className="btn btn-secondary" type="button" onClick={buttonClick}>{buttonText1}</button>
     </form>
   );
 };

@@ -30,9 +30,6 @@ const MySwiperGrid = (props) => {
         }}
         spaceBetween={10}
         modules={[Pagination, Grid]}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           320: {
             slidesPerView: 1.2,

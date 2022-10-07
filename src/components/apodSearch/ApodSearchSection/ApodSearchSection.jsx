@@ -36,7 +36,7 @@ const ApodSearchSection = () => {
 
   return (
     <section className={styles.container}>
-      <h3 className={styles.title}>Now lets go to search something</h3>
+      <h3 className={styles.title}>Search something</h3>
       <FormFilter
         reportInputs={handleFormData}
         buttonHandler1={() => dispatch(allApodsActions.showAll())}

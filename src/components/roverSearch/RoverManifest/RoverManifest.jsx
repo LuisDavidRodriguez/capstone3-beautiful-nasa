@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Table } from 'react-bootstrap';
 import styles from './roverManifest.module.scss';
 
 const RoverManifest = (props) => {
@@ -14,11 +15,14 @@ const RoverManifest = (props) => {
   } = props;
 
   return (
-    <table className={styles.infoTable}>
+    <Table className={styles.infoTable} responsive striped bordered hover size="sm">
       <thead>
         <tr>
           <th>
             {name}
+          </th>
+          <th>
+            {' '}
           </th>
         </tr>
       </thead>
@@ -48,7 +52,7 @@ const RoverManifest = (props) => {
           <td>{maxSol}</td>
         </tr>
       </tbody>
-    </table>
+    </Table>
   );
 };
 

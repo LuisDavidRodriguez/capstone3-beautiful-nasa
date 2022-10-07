@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { fetchRandomApodByQuantity, fetchDateApod } from '../../../redux/apodApi';
-import { ROVER, APOD, MEDIA } from '../../NavBar/NavBar';
+import { ROVER, APOD } from '../../NavBar/NavBar';
 import { roverFetchRandomPhotos } from '../../../redux/roverApi';
 import { imgVidFetchQueryes } from '../../../redux/imageVideoApi';
 import BandSection from '../../BandSection/BandSection';
@@ -77,7 +77,6 @@ const HomeWrapper = () => {
         title={titleMedia}
         info={infoMedia}
         color="three"
-        linkTo={MEDIA}
       />
     </div>
   );

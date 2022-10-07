@@ -43,7 +43,8 @@ function createCardsRover(data, Cards) {
     ));
   } else {
     cards = data.map((picture) => {
-      const createdTitle = `Camera: ${picture.camera.full_name}`;
+      const createdTitle = `Rover: ${picture.rover.name} `;
+      const createdInfo = `Camera: ${picture.camera.name} ${picture.camera.full_name}`;
       const createdDate = `Earth date: ${picture.earth_date} -> Martian Sol: ${picture.sol}`;
       return (
         <Cards
@@ -51,7 +52,7 @@ function createCardsRover(data, Cards) {
           id={picture.id}
           title={createdTitle}
           topic={createdDate}
-          information={picture.explanation}
+          information={createdInfo}
           url={picture.img_src}
           altPicture={createdTitle}
         />

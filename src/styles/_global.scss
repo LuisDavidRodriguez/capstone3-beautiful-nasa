@@ -20,13 +20,17 @@ h6 {
 }
 
 html {
-  font-size: 13px;
+  font-size: 12px;
 
-  @include mixin.base {
+  @include mixin.small {
     font-size: 14px;
   }
 
-  @include mixin.small {
+  @include mixin.medium {
+    font-size: 15px;
+  }
+
+  @include mixin.large {
     font-size: 16px;
   }
 }

@@ -17,10 +17,10 @@ const RoverDateFilter = (props) => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
       <label className={styles.labelSelector} htmlFor="date">Pick a date:</label>
-      <input id="date" type="date" max={maxDate} min={minDate} value={roverDate} onChange={handleChange} />
+      <input className={styles.selector} id="date" type="date" max={maxDate} min={minDate} value={roverDate} onChange={handleChange} />
     </form>
   );
 };

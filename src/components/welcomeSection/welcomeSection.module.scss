@@ -63,7 +63,8 @@
 }
 
 .media {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 90%;
   max-width: 1200px;
   height: auto;

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ListGroup } from 'react-bootstrap';
 import { roverFetchManifest } from '../../../redux/roverApi';
 import styles from './roverSearchSection.module.scss';
 import RoverManifest from '../RoverManifest/RoverManifest';
@@ -54,7 +55,7 @@ const RoverSearchSection = () => {
     }
   });
 
-  const liCameras = camerasInfo.cameras.map((camera) => <li key={camera}>{camera}</li>);
+  const liCameras = camerasInfo.cameras.map((camera) => <ListGroup.Item key={camera} className="row d-flex justify-content-evenly">{camera}</ListGroup.Item>);
   return (
 
     <section className={styles.container}>
@@ -80,9 +81,11 @@ const RoverSearchSection = () => {
         <strong>{camerasInfo.totalPhotos}</strong>
       </p>
       {!camerasInfo.arePhotos && <p>no pictures this day, Rover was on vacation! :D </p>}
-      <ul>
+
+      <h3>Cameras:</h3>
+      <ListGroup className=" col-xs-10 col-sm-6">
         {liCameras}
-      </ul>
+      </ListGroup>
       <RoverViewSection />
     </section>
   );

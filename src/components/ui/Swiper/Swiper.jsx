@@ -27,7 +27,6 @@ const MySwiper = (props) => {
         wrapperTag="ul"
         slidesPerView="auto"
         spaceBetween={0}
-        navigation
         grabCursor
         centeredSlides
         modules={[Pagination, EffectCoverflow]}
