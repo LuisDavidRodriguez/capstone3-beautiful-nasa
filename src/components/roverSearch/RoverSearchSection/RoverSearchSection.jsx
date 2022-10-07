@@ -50,9 +50,11 @@ const RoverSearchSection = () => {
       />
       <table className={styles.infoTable}>
         <thead>
-          <th>
-            {manifestData.name}
-          </th>
+          <tr>
+            <th>
+              {manifestData.name}
+            </th>
+          </tr>
         </thead>
         <tbody>
           <tr>
