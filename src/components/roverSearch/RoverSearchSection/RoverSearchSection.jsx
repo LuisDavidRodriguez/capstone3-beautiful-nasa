@@ -1,15 +1,11 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Cards from '../../ui/Cards/Cards';
-import MySwiperGrid from '../../ui/SwiperGrid/SwiperGrid';
-import { roverFetchManifest, roverFetchAPI } from '../../../redux/roverApi';
-import { manifestActions, generalPhotosActions } from '../../../redux/roverSlice';
+import { roverFetchManifest } from '../../../redux/roverApi';
 import styles from './roverSearchSection.module.scss';
 import RoverManifest from '../RoverManifest/RoverManifest';
 import RoverBoxFilter from '../RoverBoxFilter/RoverBoxFilter';
 import RoverDateFilter from '../RoverDateFilter/RoverDateFilter';
-import * as cardHelpers from '../../../helpers/cardsCreators';
+import RoverViewSection from '../ViewSection/RoverViewSection';
 
 function camerasFilter(state) {
   const { photos } = state.revorManifest.data;
@@ -50,17 +46,11 @@ const RoverSearchSection = () => {
   const manifestStatus = useSelector((state) => state.revorManifest.status);
   const manifestData = useSelector((state) => state.revorManifest.data);
   const filterRover = useSelector((state) => state.revorManifest.filters.rover);
-  const generalPicturesState = useSelector((state) => state.roverGeneralPhotos.status);
-  const camerasInfo = useSelector((state) => camerasFilter(state));
+  const camerasInfo = useSelector((state) => camerasFilter(state, dispatch));
 
   useEffect(() => {
     if (manifestStatus === 'empty' || manifestStatus === 'reFetch') {
       dispatch(roverFetchManifest(filterRover));
-    }
-
-    if (camerasInfo.arePhotos && generalPicturesState === 'reFetch') {
-      console.log('there are pictures and refetch');
-      // dispatch(generalPhotosActions.setDateFilter(filterRover.date));
     }
   });
 
@@ -93,6 +83,7 @@ const RoverSearchSection = () => {
       <ul>
         {liCameras}
       </ul>
+      <RoverViewSection />
     </section>
   );
 };

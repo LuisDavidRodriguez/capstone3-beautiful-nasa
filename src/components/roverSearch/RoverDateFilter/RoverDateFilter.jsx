@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { manifestActions } from '../../../redux/roverSlice';
+import { generalPhotosActions, manifestActions } from '../../../redux/roverSlice';
 import styles from './roverDateFilter.module.scss';
 
 const RoverDateFilter = (props) => {
@@ -13,6 +13,7 @@ const RoverDateFilter = (props) => {
     const { value } = e.target;
     setRoverDate(value);
     dispatch(manifestActions.setDateFilter(value));
+    dispatch(generalPhotosActions.setRefetch());
   };
 
   return (

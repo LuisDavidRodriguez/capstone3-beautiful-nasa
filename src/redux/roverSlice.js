@@ -75,48 +75,16 @@ const sliceGeneralPhotos = createSlice({
   initialState: {
     status: 'empty',
     data: [],
-    filters: {
-      show: 'ALL',
-      camera: '',
-      date: '',
-    },
   },
   reducers: {
-    setDateFilter(state, action) {
+    setRefetch(state) {
       return {
         ...state,
         status: 'reFetch',
-        filters: {
-          show: 'DATE',
-          camera: '',
-          date: action.payload,
-        },
-      };
-    },
-
-    setCameraFilter(state, action) {
-      return {
-        ...state,
-        status: 'reFetch',
-        filters: {
-          show: 'CAMERA',
-          camera: action.payload,
-          date: '',
-        },
-      };
-    },
-
-    setAllFilter(state) {
-      return {
-        ...state,
-        filters: {
-          show: 'ALL',
-          camera: '',
-          date: '',
-        },
       };
     },
   },
+
   extraReducers: (builder) => {
     builder.addCase(roverFetchGeneral.fulfilled, (state, action) => (
       { ...state, data: action.payload, status: 'fulfilled' }
