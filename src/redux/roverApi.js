@@ -5,7 +5,8 @@ import { KEY } from './env';
 
 const ROVER_BASE = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${KEY}`;
 const roverManifestFetched = createAction('rover_manifest_fetched');
-const roverPhotosFetched = createAction('rover_photos_fetched');
+const roverRandomFetched = createAction('rover_random_fetched');
+const roverGeneralPhotos = createAction('rover_general_fetched');
 
 // used to will the names of the rovers availables
 const MAP_ROVER_NAMES = ['curiosity', 'opportunity', 'spirit'];
@@ -165,9 +166,31 @@ const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover =
   }
 });
 
-const roverFetchPhotos = createAsyncThunk(roverPhotosFetched, async (queryes = {}) => {
+const roverFetchRandomPhotos = createAsyncThunk(roverRandomFetched, async (queryes = {}) => {
   const {
     sol = 1000,
+    earthDate = null,
+    camera = null,
+    page = null,
+  } = queryes;
+
+  const url = getRoverUrlQueryes({ sol, page });
+  console.log(url);
+  try {
+    const data = await fetchHelper(url);
+    const { photos } = data;
+    // console.log(photos);
+    // the data is an array
+    return photos;
+  } catch (error) {
+    console.log(error);
+    return 'error';
+  }
+});
+
+const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queryes = {}) => {
+  const {
+    sol = null,
     earthDate = null,
     camera = null,
     page = null,
@@ -194,4 +217,4 @@ async function fetchHelper(url) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { roverFetchManifest, roverFetchPhotos };
+export { roverFetchManifest, roverFetchRandomPhotos, roverFetchGeneral };

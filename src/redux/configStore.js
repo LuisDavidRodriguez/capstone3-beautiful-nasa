@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { allReducer, randomReducer } from './apod';
-import { reducerManifest, reducerPhotos } from './roverSlice';
+import { reducerManifest, reducerRandomPhotos, reducerGeneralPhotos } from './roverSlice';
 import { reducerImgVideo, reducerAssetID } from './imageVideoReducer';
 
 const store = configureStore({
@@ -8,7 +8,8 @@ const store = configureStore({
     randomApod: randomReducer,
     allApods: allReducer,
     revorManifest: reducerManifest,
-    roverPhotos: reducerPhotos,
+    roverRandomPhotos: reducerRandomPhotos,
+    roverGeneralPhotos: reducerGeneralPhotos,
     imgVideo: reducerImgVideo,
     imgAssetId: reducerAssetID,
   },

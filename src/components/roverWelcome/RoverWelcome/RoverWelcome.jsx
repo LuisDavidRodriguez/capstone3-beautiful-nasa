@@ -5,7 +5,7 @@ import Front from '../Front/Front';
 import Back from '../Back/Back';
 
 const RoverWelcome = () => {
-  const cards = [Front, Back];
+  const cards = [<Front key="front" />, <Back key="back" />];
   return (
     <section className={style.container}>
       <SwiperFlip

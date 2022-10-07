@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { fetchRandomApodByQuantity, fetchDateApod } from '../../../redux/apodApi';
 import { ROVER, APOD, MEDIA } from '../../NavBar/NavBar';
-import { roverFetchPhotos } from '../../../redux/roverApi';
+import { roverFetchRandomPhotos } from '../../../redux/roverApi';
 import { imgVidFetchQueryes } from '../../../redux/imageVideoApi';
 import BandSection from '../../BandSection/BandSection';
 import HeaderContainer from '../../header/HeaderContainer/HeaderContainer';
@@ -22,7 +22,7 @@ const infoMedia = 'The NASA images and media API is organized around REST, You c
 const HomeWrapper = () => {
   const dispatch = useDispatch();
   const apodRandom = useSelector((state) => state.randomApod, shallowEqual);
-  const roverPhotos = useSelector((state) => state.roverPhotos);
+  const roverRandom = useSelector((state) => state.roverRandomPhotos);
   const nasaImgVideo = useSelector((state) => state.imgVideo);
   const statusAllApod = useSelector((state) => state.allApods.status);
 
@@ -31,8 +31,8 @@ const HomeWrapper = () => {
       dispatch(fetchRandomApodByQuantity());
     }
 
-    if (roverPhotos.length === 0) {
-      dispatch(roverFetchPhotos({ sol: 1000, page: 3 }));
+    if (roverRandom.length === 0) {
+      dispatch(roverFetchRandomPhotos({ sol: 1000, page: 3 }));
     }
 
     if (Object.keys(nasaImgVideo).length === 0) {
@@ -49,7 +49,7 @@ const HomeWrapper = () => {
 
   // create cards for the randomApod
   const cardsApod = helper.createCardsApod(apodRandom, Cards);
-  const cardsRover = helper.createCardsRover(roverPhotos, Cards);
+  const cardsRover = helper.createCardsRover(roverRandom, Cards);
   const cardsImgVideo = helper.createCardsMedia(nasaImgVideo, Cards);
 
   return (
