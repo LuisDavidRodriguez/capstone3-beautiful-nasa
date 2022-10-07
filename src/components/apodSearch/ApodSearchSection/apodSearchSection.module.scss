@@ -3,7 +3,10 @@
 
 .container {
   width: 100%;
-  background-color: f.get-color('relax');
+  background-color: darken($color: f.get-color('relax'), $amount: 50);
+  background-image: url('./apodSearch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +14,7 @@
 }
 
 .title {
+  color: f.get-color('primary');
   font-size: 3em;
   margin-bottom: 20px;
   text-align: center;

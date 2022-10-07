@@ -2,15 +2,42 @@
 @use '../../../styles/variables' as v;
 
 .container {
-  padding: 20px 0;
-  background-color: f.get-color('accentSecondary');
-  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.title {
-  text-align: center;
-  font-size: 4em;
+  .title {
+    color: f.get-color('primary');
+    text-align: center;
+    font-size: 4em;
+  }
+
+  .manifestSection {
+    width: 100%;
+    background-color: f.get-color('accentSecondary');
+    background-image: url('./mart1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .infoContainer {
+      width: 40%;
+      min-width: 220px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3%;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px black;
+      background-color: transparentize($color: f.get-color('accentPrimary'), $amount: 0.1);
+    }
+  }
+
+  .viewContainer {
+    background-color: f.get-color('background');
+    width: 100%;
+  }
 }

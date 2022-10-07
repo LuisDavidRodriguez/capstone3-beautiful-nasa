@@ -23,15 +23,15 @@
     background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
     border-radius: 40px;
   }
-  
+
   .swiper-wrapper {
     padding-inline-start: 0;
   }
-  
+
   .swiper-pagination-bullet {
     background-color: f.get-color('accentSecondary') !important;
   }
-  
+
   .swiper-slide {
     height: calc((100% - 30px) / 2) !important;
   }

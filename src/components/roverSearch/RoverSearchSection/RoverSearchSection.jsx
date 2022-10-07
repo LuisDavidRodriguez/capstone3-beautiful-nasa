@@ -59,34 +59,42 @@ const RoverSearchSection = () => {
   return (
 
     <section className={styles.container}>
-      <h3 className={styles.title}>Manifest section!</h3>
-      <RoverBoxFilter
-        initial={manifestData.name}
-      />
-      <RoverManifest
-        landingDate={manifestData.landing_date}
-        launchDate={manifestData.launch_date}
-        maxDate={manifestData.max_date}
-        maxSol={manifestData.max_sol}
-        name={manifestData.name}
-        status={manifestData.status}
-        totalPhotos={manifestData.total_photos}
-      />
-      <RoverDateFilter
-        minDate={manifestData.landing_date}
-        maxDate={manifestData.max_date}
-      />
-      <p>
-        Total photos this day:
-        <strong>{camerasInfo.totalPhotos}</strong>
-      </p>
-      {!camerasInfo.arePhotos && <p>no pictures this day, Rover was on vacation! :D </p>}
+      <section className={styles.manifestSection}>
+        <h3 className={styles.title}>Manifest section!</h3>
 
-      <h3>Cameras:</h3>
-      <ListGroup className=" col-xs-10 col-sm-6">
-        {liCameras}
-      </ListGroup>
-      <RoverViewSection />
+        <article className={styles.infoContainer}>
+          <RoverBoxFilter
+            initial={manifestData.name}
+          />
+          <RoverManifest
+            landingDate={manifestData.landing_date}
+            launchDate={manifestData.launch_date}
+            maxDate={manifestData.max_date}
+            maxSol={manifestData.max_sol}
+            name={manifestData.name}
+            status={manifestData.status}
+            totalPhotos={manifestData.total_photos}
+          />
+          <RoverDateFilter
+            minDate={manifestData.landing_date}
+            maxDate={manifestData.max_date}
+          />
+          <p>
+            Total photos this day:
+            <strong>{camerasInfo.totalPhotos}</strong>
+          </p>
+          {!camerasInfo.arePhotos && <p>no pictures this day, Rover was on vacation! :D </p>}
+
+          <h3>Cameras:</h3>
+          <ListGroup className=" col-xs-10 col-sm-6">
+            {liCameras}
+          </ListGroup>
+        </article>
+      </section>
+
+      <article className={styles.viewContainer}>
+        <RoverViewSection />
+      </article>
     </section>
   );
 };

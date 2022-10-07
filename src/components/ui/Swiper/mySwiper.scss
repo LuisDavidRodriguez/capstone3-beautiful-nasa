@@ -5,11 +5,11 @@
   width: 75vw;
   padding-bottom: 50px !important;
 
-  @include mixin.customMin(320){
+  @include mixin.customMin(320) {
     width: 90vw;
   }
 
-  @include mixin.customMin(480){
+  @include mixin.customMin(480) {
     width: 95vw;
   }
 
@@ -49,11 +49,11 @@
     background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
     border-radius: 40px;
   }
-  
+
   .swiper-wrapper {
     padding-inline-start: 0;
   }
-  
+
   .swiper-pagination-bullet {
     background-color: f.get-color('accentSecondary') !important;
   }

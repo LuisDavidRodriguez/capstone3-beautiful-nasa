@@ -43,7 +43,7 @@ const FormFilter = (props) => {
         <option value="image">Image</option>
         <option value="video">Video</option>
       </select>
-      <button className="btn btn-secondary" type="button" onClick={buttonClick}>{buttonText1}</button>
+      <button className="btn btn-outline-light" type="button" onClick={buttonClick}>{buttonText1}</button>
     </form>
   );
 };

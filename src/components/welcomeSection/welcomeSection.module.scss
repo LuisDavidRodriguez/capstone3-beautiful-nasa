@@ -1,5 +1,6 @@
 @use '../../styles/functions' as f;
 @use '../../styles/variables' as v;
+
 .welcomeSection {
   width: 100%;
   background-color: f.get-color('background');
@@ -42,7 +43,7 @@
   max-width: 1200px;
   margin-top: 30px;
   margin-bottom: 30px;
-  
+
   .dateLabel {
     font-weight: 400;
     align-self: flex-start;

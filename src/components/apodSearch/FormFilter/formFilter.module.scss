@@ -12,20 +12,19 @@
 
   input {
     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;       /* Remove default arrow */
-     padding: 5px;
-     border-radius: 5px;
-     margin: 2px;
-  }
-  
-  .selector {
-    -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;       /* Remove default arrow */
-     padding: 5px;
-     border-radius: 5px;
-     margin: 2px;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
   }
 
+  .selector {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
+  }
 }
