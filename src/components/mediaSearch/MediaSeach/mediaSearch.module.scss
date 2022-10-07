@@ -1,0 +1,8 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/functions' as f;
+
+.form {
+  background-color: f.get-color('background');
+  width: 100%;
+  height: 100%;
+}
