@@ -82,8 +82,6 @@ const getRoverUrlQueryes = (qeryes) => {
 };
 
 const roverFetchManifest = createAsyncThunk(roverManifestFetched, async (rover = 'Curiosity') => {
-  console.log('fetching RoverManifest...');
-
   const url = getUrlManifest(rover);
   try {
     const data = await fetchHelper(url);
