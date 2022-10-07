@@ -7,18 +7,32 @@ const sliceManifest = createSlice({
     status: 'empty',
     data: [],
     filters: {
+      rover: 'Curiosity',
       show: 'ALL',
       camera: '',
       date: '',
     },
   },
   reducers: {
+    setRoverFilter(state, action) {
+      return {
+        ...state,
+        status: 'reFetch',
+        filters: {
+          ...state.filters,
+          show: 'ALL',
+          rover: action.payload,
+          date: '',
+        },
+      };
+    },
+
     setDateFilter(state, action) {
       return {
         ...state,
         filters: {
+          ...state.filters,
           show: 'DATE',
-          camera: '',
           date: action.payload,
         },
       };
@@ -28,9 +42,9 @@ const sliceManifest = createSlice({
       return {
         ...state,
         filters: {
+          ...state.filters,
           show: 'CAMERA',
           camera: action.payload,
-          date: '',
         },
       };
     },

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { roverFetchManifest } from '../../../redux/roverApi';
+import { manifestActions } from '../../../redux/roverSlice';
 import styles from './roverBoxFilter.module.scss';
 
 const RoverBoxFilter = (props) => {
@@ -10,10 +10,11 @@ const RoverBoxFilter = (props) => {
   console.log('initial recived', initial);
   const dispatch = useDispatch();
   const [roverSelector, setRoverSelector] = useState(initial);
+
   const handleChange = (e) => {
     const { value } = e.target;
     setRoverSelector(value);
-    dispatch(roverFetchManifest(value));
+    dispatch(manifestActions.setRoverFilter(value));
   };
 
   return (

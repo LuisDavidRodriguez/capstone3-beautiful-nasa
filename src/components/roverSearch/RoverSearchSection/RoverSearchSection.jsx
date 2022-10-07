@@ -49,28 +49,15 @@ const RoverSearchSection = () => {
   const dispatch = useDispatch();
   const manifestStatus = useSelector((state) => state.revorManifest.status);
   const manifestData = useSelector((state) => state.revorManifest.data);
+  const filterRover = useSelector((state) => state.revorManifest.filters.rover);
   const camerasInfo = useSelector((state) => camerasFilter(state));
-  const [generalPhotos, setgeneralPhotos] = useState([]);
-  const [generalIsLoading, setgeneralIsLoading] = useState(true);
 
   useEffect(() => {
-    if (manifestStatus === 'empty') {
-      dispatch(roverFetchManifest());
-    }
-
-    if (camerasInfo.arePhotos) {
-      if (generalPhotos.length === 0) {
-        roverFetchAPI({ earthDate: camerasInfo.date }).then((data) => {
-          setgeneralPhotos(data);
-          setgeneralIsLoading(false);
-        }).catch(() => {
-          setgeneralIsLoading(false);
-        });
-      }
+    if (manifestStatus === 'empty' || manifestStatus === 'reFetch') {
+      dispatch(roverFetchManifest(filterRover));
     }
   });
 
-  const cards = cardHelpers.createCardsRover(generalPhotos, Cards);
   const liCameras = camerasInfo.cameras.map((camera) => <li key={camera}>{camera}</li>);
   return (
 
@@ -100,10 +87,6 @@ const RoverSearchSection = () => {
       <ul>
         {liCameras}
       </ul>
-
-      <MySwiperGrid
-        cards={cards}
-      />
     </section>
   );
 };
