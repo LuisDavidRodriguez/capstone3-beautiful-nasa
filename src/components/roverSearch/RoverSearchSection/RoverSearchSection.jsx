@@ -50,11 +50,17 @@ const RoverSearchSection = () => {
   const manifestStatus = useSelector((state) => state.revorManifest.status);
   const manifestData = useSelector((state) => state.revorManifest.data);
   const filterRover = useSelector((state) => state.revorManifest.filters.rover);
+  const generalPicturesState = useSelector((state) => state.roverGeneralPhotos.status);
   const camerasInfo = useSelector((state) => camerasFilter(state));
 
   useEffect(() => {
     if (manifestStatus === 'empty' || manifestStatus === 'reFetch') {
       dispatch(roverFetchManifest(filterRover));
+    }
+
+    if (camerasInfo.arePhotos && generalPicturesState === 'reFetch') {
+      console.log('there are pictures and refetch');
+      // dispatch(generalPhotosActions.setDateFilter(filterRover.date));
     }
   });
 

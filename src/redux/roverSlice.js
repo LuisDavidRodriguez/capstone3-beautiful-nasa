@@ -85,6 +85,7 @@ const sliceGeneralPhotos = createSlice({
     setDateFilter(state, action) {
       return {
         ...state,
+        status: 'reFetch',
         filters: {
           show: 'DATE',
           camera: '',
@@ -96,6 +97,7 @@ const sliceGeneralPhotos = createSlice({
     setCameraFilter(state, action) {
       return {
         ...state,
+        status: 'reFetch',
         filters: {
           show: 'CAMERA',
           camera: action.payload,
