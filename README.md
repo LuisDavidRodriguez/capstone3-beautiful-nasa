@@ -54,8 +54,6 @@ git clone git@github.com:LuisDavidRodriguez/capstone3-beautiful-nasa.git
 - With the files open in Visual Studio Code, press the **Go Live** button at the bottom of the window to launch the files with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 
-
-
 ## Authors
 
 👤 **Luis David Rodriguez Valades Missions section **
