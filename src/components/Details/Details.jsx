@@ -13,7 +13,7 @@ const detailsType = { APOD, ROVER, MEDIA };
 const Details = (props) => {
   const {
     type,
-    id,
+    data,
     handleClose,
     show,
   } = props;
@@ -21,7 +21,11 @@ const Details = (props) => {
   let children = '';
 
   if (type === detailsType.APOD) {
-    children = <h3>Apod modal</h3>;
+    console.log(data);
+
+    children = (
+      <h3>Apod modal</h3>
+    );
   }
 
   if (type === detailsType.ROVER) {
@@ -45,9 +49,13 @@ const Details = (props) => {
 export default Details;
 export { detailsType };
 
+Details.defaultProps = {
+  data: [],
+};
+
 Details.propTypes = {
   handleClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
-  id: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf({}),
   type: PropTypes.string.isRequired,
 };

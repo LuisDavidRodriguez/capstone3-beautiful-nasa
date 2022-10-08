@@ -13,6 +13,8 @@ const Cards = (props) => {
     url,
     altPicture,
     mediaType,
+    id,
+    cardFamily,
   } = props;
 
   const {
@@ -30,7 +32,7 @@ const Cards = (props) => {
         <p className={styles.topic}>{topic}</p>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.info}>{information}</p>
-        <button type="button" onClick={(e) => clickMore(e)}>see details</button>
+        <button type="button" onClick={() => clickMore(id, cardFamily)}>see details</button>
       </article>
       <div className={styles.media}>
         <MultipleMediaRender
@@ -53,6 +55,7 @@ Cards.defaultProps = {
   altPicture: 'default picture',
   mediaType: 'image',
   clickMore: () => { console.log('default'); },
+  cardFamily: 'default Family',
 };
 
 Cards.propTypes = {
@@ -63,4 +66,6 @@ Cards.propTypes = {
   altPicture: PropTypes.string,
   mediaType: PropTypes.string,
   clickMore: PropTypes.func,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  cardFamily: PropTypes.string,
 };

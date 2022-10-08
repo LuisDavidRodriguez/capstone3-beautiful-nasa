@@ -11,7 +11,7 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className={styles.modalMain}>
         {children}
-        <button type="button" onClick={handleClose}>
+        <button className="btn btn-info" type="button" onClick={handleClose}>
           Back
         </button>
       </section>
@@ -26,7 +26,7 @@ Modal.defaultProps = {
 Modal.propTypes = {
   handleClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 export default Modal;
