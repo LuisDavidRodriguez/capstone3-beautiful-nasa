@@ -1,17 +1,20 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
-import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
-import { KEY } from './env';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 const IMG_VIDEO_BASE = 'https://images-api.nasa.gov';
 const mediaFetched = createAction('media_fetched');
 const mediaIdFetched = createAction('media_id_fetched');
 
+async function fetchHelper(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Error in fetch');
+  const data = await response.json();
+  return data;
+}
+
 const getImgVideoUrlQueryes = (qeryes) => {
+  /* eslint-disable */
   /*
     https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
-
     Name                                  Type      Description
     q (optional)                          string     Free text search terms to compare to all indexed metadata.
     center (optional)                     string     NASA center which published the media.
@@ -37,6 +40,8 @@ const getImgVideoUrlQueryes = (qeryes) => {
     &media_type=image" |
     python -m json.tool
   */
+  /* eslint-enable */
+
   const {
     q = null,
     center = null,
@@ -253,17 +258,10 @@ const mediaByIdFetch = createAsyncThunk(mediaIdFetched, async (queryes = {}) => 
   try {
     const data = await fetchHelper(url);
     // the data is an array
-    return [3];
+    return [data];
   } catch (error) {
     return 'error';
   }
 });
-
-async function fetchHelper(url) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error('Error in fetch');
-  const data = await response.json();
-  return data;
-}
 
 export { imgVidFetchQueryes, mediaByIdFetch };

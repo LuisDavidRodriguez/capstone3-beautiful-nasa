@@ -1,11 +1,16 @@
-/* eslint-disable no-use-before-define */
-
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { KEY } from './env';
 
 const roverManifestFetched = createAction('rover_manifest_fetched');
 const roverRandomFetched = createAction('rover_random_fetched');
 const roverGeneralPhotos = createAction('rover_general_fetched');
+
+async function fetchHelper(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Error in fetch');
+  const data = await response.json();
+  return data;
+}
 
 /*
 Mission Manifest
@@ -122,14 +127,6 @@ const roverFetchGeneral = createAsyncThunk(roverGeneralPhotos, async (queries) =
   }
 });
 
-async function fetchHelper(url) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error('Error in fetch');
-  const data = await response.json();
-  return data;
-}
-
-// eslint-disable-next-line import/prefer-default-export
 export {
   roverFetchManifest,
   roverFetchRandomPhotos,

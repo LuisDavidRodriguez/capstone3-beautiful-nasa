@@ -1,11 +1,16 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-unused-vars */
 import { createAction, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import { KEY } from './env';
 import * as dateHelper from '../helpers/dates';
 
 const randomApodFetched = createAction('random_apod_fetched');
 const dateApodFetched = createAction('date_apod_fetched');
+
+async function fetchHelper(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Error in fetch');
+  const data = await response.json();
+  return data;
+}
 
 const APOD_BASE = `https://api.nasa.gov/planetary/apod?api_key=${KEY}`;
 const getApodUrlQueryes = (qeryes) => {
@@ -139,12 +144,5 @@ const fetchDateApod = createAsyncThunk(dateApodFetched, async (startDate = dateH
     return 'error';
   }
 });
-
-async function fetchHelper(url) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error('Error in fetch');
-  const data = await response.json();
-  return data;
-}
 
 export { fetchTodayApod, fetchRandomApodByQuantity, fetchDateApod };

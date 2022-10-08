@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { fetchRandomApodByQuantity, fetchDateApod } from '../../../redux/apodApi';

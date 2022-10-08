@@ -6,7 +6,6 @@ const sourceVideo = 'https://technology.nasa.gov/sites/default/files/2022-08/Web
 const ariaLabel = 'NASA Technology Transfer Introduction Video';
 
 const HeaderContainer = () => (
-  // eslint-disable-next-line jsx-a11y/media-has-caption
   <div className={styles.videoDiv}>
     <VideoSimple ariaLabel={ariaLabel} url={sourceVideo} />
     <Message />

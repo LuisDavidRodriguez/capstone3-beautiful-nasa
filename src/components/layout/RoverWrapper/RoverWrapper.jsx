@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 import React, { useEffect } from 'react';
 import RoverWelcome from '../../roverWelcome/RoverWelcome/RoverWelcome';
 import RoverSearchSection from '../../roverSearch/RoverSearchSection/RoverSearchSection';

@@ -87,5 +87,4 @@ const sliceAll = createSlice({
 const randomReducer = sliceRandom.reducer;
 const allReducer = sliceAll.reducer;
 const allApodsActions = sliceAll.actions;
-// eslint-disable-next-line import/prefer-default-export
 export { randomReducer, allReducer, allApodsActions };
