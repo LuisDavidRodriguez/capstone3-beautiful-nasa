@@ -1,46 +1,82 @@
-# Getting Started with Create React App and Redux
+# Beautiful NASA 😄
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Description
+This application allows you to HIT 3 API's fournished by the NASA,
+you can retreive information from:
 
-## Available Scripts
+- Astronomy Picture of the Day (APOD)
+One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of the most popular websites across all federal agencies. It has the popular appeal of a Justin Bieber video.
 
-In the project directory, you can run:
+- Mars Rover Photos
+This API is designed to collect image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars and make it more easily available to other developers, educators, and citizen scientists. This API is maintained by Chris Cerami.
 
-### `npm start`
+- NASA Image and Video Library
+The NASA images and media API is organized around REST, You can see and retreive all the media pictures that NASA deliver us.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Builded with:
+- React & Redux
+- SASS modules
+- React-Bootstrap
+- Swiper Library
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
 
-### `npm test`
+![Mi video-27](https://user-images.githubusercontent.com/105079888/194717235-6ac36193-bd60-4abe-8ce9-7568069faec0.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+![Mi video-28](https://user-images.githubusercontent.com/105079888/194717289-72c5f378-5e45-4ab7-885f-642b74fec40b.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live Demo
+[You can see the demo here](https://swiper-home--resilient-crepe-426208.netlify.app/)
 
-### `npm run eject`
+## Loom video! :D
+https://www.loom.com/share/da40a3ba97ce4f9bb6e813d6e2d4071d
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup
+If you installed git you can clone the code to your machine, or download a ZIP of all the files directly.
+- Clone the repo
+- cd into the project directory
+- npm install
+- npm start (to start/run the project)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[Download the ZIP from this location](https://github.com/LuisDavidRodriguez/capstone3-beautiful-nasa/archive/refs/heads/development.zip), or run the following [git](https://git-scm.com/downloads)
+command to clone the files to your machine:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone git@github.com:LuisDavidRodriguez/capstone3-beautiful-nasa.git
+```
+- Once the files are on your machine, open the _Portfolio_ folder in [Visual Studio Code](https://code.visualstudio.com/)
 
-## Learn More
+- With the files open in Visual Studio Code, press the **Go Live** button at the bottom of the window to launch the files with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Authors
+
+👤 **Luis David Rodriguez Valades Missions section **
+
+- GitHub: [@githubhandle](https://github.com/LuisDavidRodriguez)
+- LinkedIn: [profile](https://www.linkedin.com/in/luis-david-rodriguez-valades)
+- Youtube: [chanel](https://www.youtube.com/channel/UChuA4SgdDYk2DHStsy7HEgQ)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- To the NASA!! for that beautiful API's
+- To Nelson Sakwa, since our website is inspired by his template. <br>
+link to the guidelines: https://www.behance.net/sakwadesignstudio?tracking_source=search_users|nelson%20sakwa
+
