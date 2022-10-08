@@ -1,13 +1,17 @@
-/* eslint-disable arrow-body-style */
-import React from 'react';
-import Rover from '../../rover/Rover/Rover';
+import React, { useEffect } from 'react';
+import RoverWelcome from '../../roverWelcome/RoverWelcome/RoverWelcome';
+import RoverSearchSection from '../../roverSearch/RoverSearchSection/RoverSearchSection';
 import './roverWrapper.scss';
 
 const RoverWrapper = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className="roverWrapper">
-      RoverWrapper
-      <Rover />
+      <RoverWelcome />
+      <RoverSearchSection />
     </div>
   );
 };

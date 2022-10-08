@@ -1,22 +1,36 @@
 @use './mixin';
 @use './variables' as v;
 @use './typography';
+@use './buttons';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: v.$fontFamilyRobotoSlab;
+  font-family: v.$fontFamilyLato;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: v.$fontFamilyGillSans;
 }
 
 html {
-  font-size: 13px;
+  font-size: 12px;
 
-  @include mixin.base {
+  @include mixin.small {
     font-size: 14px;
   }
 
-  @include mixin.small {
+  @include mixin.medium {
+    font-size: 15px;
+  }
+
+  @include mixin.large {
     font-size: 16px;
   }
 }

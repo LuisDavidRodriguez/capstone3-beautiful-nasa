@@ -1,0 +1,17 @@
+.form {
+  height: 30px;
+
+  .labelSelector {
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  .selector {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    padding: 5px;
+    border-radius: 5px;
+  }
+}

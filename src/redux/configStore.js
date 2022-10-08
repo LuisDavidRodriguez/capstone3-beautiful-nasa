@@ -1,9 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counter/counterSlice';
+import { allReducer, randomReducer } from './apod';
+import { reducerManifest, reducerRandomPhotos, reducerGeneralPhotos } from './roverSlice';
+import { reducerImgVideo, reducerAssetID } from './imageVideoReducer';
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    randomApod: randomReducer,
+    allApods: allReducer,
+    revorManifest: reducerManifest,
+    roverRandomPhotos: reducerRandomPhotos,
+    roverGeneralPhotos: reducerGeneralPhotos,
+    imgVideo: reducerImgVideo,
+    imgAssetId: reducerAssetID,
   },
 });
 

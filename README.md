@@ -21,13 +21,18 @@ The NASA images and media API is organized around REST, You can see and retreive
 
 <br />
 
+![Mi video-27](https://user-images.githubusercontent.com/105079888/194717235-6ac36193-bd60-4abe-8ce9-7568069faec0.gif)
 
+
+![Mi video-28](https://user-images.githubusercontent.com/105079888/194717289-72c5f378-5e45-4ab7-885f-642b74fec40b.gif)
 
 
 
 ## Live Demo
 [You can see the demo here](https://swiper-home--resilient-crepe-426208.netlify.app/)
 
+## Loom video! :D
+https://www.loom.com/share/da40a3ba97ce4f9bb6e813d6e2d4071d
 
 ## Getting Started
 
@@ -47,8 +52,6 @@ git clone git@github.com:LuisDavidRodriguez/capstone3-beautiful-nasa.git
 - Once the files are on your machine, open the _Portfolio_ folder in [Visual Studio Code](https://code.visualstudio.com/)
 
 - With the files open in Visual Studio Code, press the **Go Live** button at the bottom of the window to launch the files with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
-
-
 
 
 ## Authors

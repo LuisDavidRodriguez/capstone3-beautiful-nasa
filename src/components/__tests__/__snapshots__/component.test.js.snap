@@ -1,0 +1,446 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormFilter components Render FormFitler 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="form"
+      >
+        <input
+          name="textInput"
+          placeholder="search by text in this period"
+          type="text"
+          value=""
+        />
+        <input
+          name="dateInput"
+          type="date"
+          value=""
+        />
+        <select
+          class="selector"
+          name="selectInput"
+        >
+          <option
+            value="All"
+          >
+            All
+          </option>
+          <option
+            value="image"
+          >
+            Image
+          </option>
+          <option
+            value="video"
+          >
+            Video
+          </option>
+        </select>
+        <button
+          class="btn btn-outline-light"
+          type="button"
+        >
+          default text1
+        </button>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="form"
+    >
+      <input
+        name="textInput"
+        placeholder="search by text in this period"
+        type="text"
+        value=""
+      />
+      <input
+        name="dateInput"
+        type="date"
+        value=""
+      />
+      <select
+        class="selector"
+        name="selectInput"
+      >
+        <option
+          value="All"
+        >
+          All
+        </option>
+        <option
+          value="image"
+        >
+          Image
+        </option>
+        <option
+          value="video"
+        >
+          Video
+        </option>
+      </select>
+      <button
+        class="btn btn-outline-light"
+        type="button"
+      >
+        default text1
+      </button>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Header reder Header 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="videoDiv"
+      >
+        <video
+          aria-label="NASA Technology Transfer Introduction Video"
+          autoplay=""
+          loop=""
+          playsinline=""
+          preload="true"
+          width="100%"
+        >
+          <source
+            src="https://technology.nasa.gov/sites/default/files/2022-08/WebsiteLoopingvideo3.mp4"
+            type="video/mp4"
+          />
+          Sorry, your browser doesn't support videos.
+        </video>
+        <div
+          class="welcomeMessage"
+        >
+          <h3
+            class="title"
+          >
+            Welcome to Beautiful-NASA
+          </h3>
+          <p
+            class="p1"
+          >
+            This application allows you to HIT 2 API's fournished by the NASA
+          </p>
+          <p
+            class="p1"
+          >
+            Enjoyed the views and the functionality
+          </p>
+          <p
+            class="p1"
+          >
+            Coded By
+             
+            <a
+              class="a1"
+              href="https://github.com/LuisDavidRodriguez"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Luis David Rodriguez Valades
+            </a>
+             
+            powered by the NASA
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="videoDiv"
+    >
+      <video
+        aria-label="NASA Technology Transfer Introduction Video"
+        autoplay=""
+        loop=""
+        playsinline=""
+        preload="true"
+        width="100%"
+      >
+        <source
+          src="https://technology.nasa.gov/sites/default/files/2022-08/WebsiteLoopingvideo3.mp4"
+          type="video/mp4"
+        />
+        Sorry, your browser doesn't support videos.
+      </video>
+      <div
+        class="welcomeMessage"
+      >
+        <h3
+          class="title"
+        >
+          Welcome to Beautiful-NASA
+        </h3>
+        <p
+          class="p1"
+        >
+          This application allows you to HIT 2 API's fournished by the NASA
+        </p>
+        <p
+          class="p1"
+        >
+          Enjoyed the views and the functionality
+        </p>
+        <p
+          class="p1"
+        >
+          Coded By
+           
+          <a
+            class="a1"
+            href="https://github.com/LuisDavidRodriguez"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Luis David Rodriguez Valades
+          </a>
+           
+          powered by the NASA
+        </p>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Media search Media Search 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="form"
+      >
+        <input
+          name="textInput"
+          placeholder="Search for..."
+          type="text"
+          value=""
+        />
+        <button
+          type="button"
+        >
+          Search
+        </button>
+        <select
+          name="selectInput"
+        >
+          <option
+            value="All"
+          >
+            All
+          </option>
+          <option
+            value="image"
+          >
+            Image
+          </option>
+          <option
+            value="video"
+          >
+            Video
+          </option>
+        </select>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="form"
+    >
+      <input
+        name="textInput"
+        placeholder="Search for..."
+        type="text"
+        value=""
+      />
+      <button
+        type="button"
+      >
+        Search
+      </button>
+      <select
+        name="selectInput"
+      >
+        <option
+          value="All"
+        >
+          All
+        </option>
+        <option
+          value="image"
+        >
+          Image
+        </option>
+        <option
+          value="video"
+        >
+          Video
+        </option>
+      </select>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

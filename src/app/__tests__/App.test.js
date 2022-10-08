@@ -1,15 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../../redux/configStore';
-import App from '../App';
+import WelcomeSection from '../../components/welcomeSection/WelcomeSection';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
+test('App', () => {
+  render(
     <Provider store={store}>
-      <App />
+      <WelcomeSection />
     </Provider>,
   );
+  const welcome = screen.getByText('The Astronomy Picture of the Day is:');
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(welcome.tagName).toBe('H3');
 });

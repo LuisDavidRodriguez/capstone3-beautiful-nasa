@@ -1,0 +1,44 @@
+@use './functions' as f;
+
+.links {
+  display: flex;
+  color: f.get-color('primary');
+  margin: 10px;
+  position: relative;
+  height: 50px;
+  align-items: center;
+  padding: 5px;
+  // when the element is not active still we need to add before as to get the hover effect
+  // effect borrowed and adapted from https://css-tricks.com/css-link-hover-effects/
+  &::before {
+    content: '';
+    background-color: transparentize($color:  f.get-color('relax'), $amount: 0.3);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  // when the item is active I want to see the line higer!
+  // I was using this scss as a module and it does not work with the active class
+  // Because the NavLink class add active, but the module add an unique Id __active__3s7e5
+  &.active::before {
+    content: '';
+    background-color: transparentize($color:  f.get-color('relax'), $amount: 0.3);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 6px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+}

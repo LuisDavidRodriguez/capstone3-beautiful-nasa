@@ -1,5 +1,6 @@
 @use '../../../styles/variables' as v;
 
 .roverWrapper {
+  width: 100%;
   margin-top: v.$navHeightMobile3;
 }
