@@ -3,8 +3,11 @@
 // so it is better deal with each information in only this place
 // instead of has in other part of the program again how to clean the data
 
-function createCardsApod(data, Cards) {
+// eslint-disable-next-line no-unused-vars
+const createCardsApod = (data, Cards, clickMores) => {
   let cards = [];
+
+  console.log(clickMores);
   if (data === 'loading') {
     // colocamos fakes id for the skeleton
     cards = [1845, 2848, 3545].map((skeleton) => (
@@ -24,12 +27,13 @@ function createCardsApod(data, Cards) {
         url={apod.url}
         altPicture={apod.title}
         mediaType={apod.mediaType}
+        clickMore={clickMores}
       />
     ));
   }
 
   return cards;
-}
+};
 
 function createCardsRover(data, Cards) {
   let cards = [];

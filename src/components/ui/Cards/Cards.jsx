@@ -15,9 +15,13 @@ const Cards = (props) => {
     mediaType,
   } = props;
 
+  const {
+    clickMore,
+  } = props;
+
   // protect against bigger texts
   title = `${title.substring(0, 30)}`;
-  information = `${information.substring(0, 200)}...`;
+  information = `${information.substring(0, 100)}...`;
   altPicture = `${title.substring(0, 30)}...`;
 
   return (
@@ -26,6 +30,7 @@ const Cards = (props) => {
         <p className={styles.topic}>{topic}</p>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.info}>{information}</p>
+        <button type="button" onClick={(e) => clickMore(e)}>see details</button>
       </article>
       <div className={styles.media}>
         <MultipleMediaRender
@@ -47,6 +52,7 @@ Cards.defaultProps = {
   url: defaultPicture,
   altPicture: 'default picture',
   mediaType: 'image',
+  clickMore: () => { console.log('default'); },
 };
 
 Cards.propTypes = {
@@ -56,4 +62,5 @@ Cards.propTypes = {
   url: PropTypes.string,
   altPicture: PropTypes.string,
   mediaType: PropTypes.string,
+  clickMore: PropTypes.func,
 };

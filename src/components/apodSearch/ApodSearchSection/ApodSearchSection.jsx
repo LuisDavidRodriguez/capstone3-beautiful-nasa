@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDateApod } from '../../../redux/apodApi';
 import { allApodsActions } from '../../../redux/apod';
@@ -7,12 +7,14 @@ import MySwiperGrid from '../../ui/SwiperGrid/SwiperGrid';
 import styles from './apodSearchSection.module.scss';
 import * as cardsCreators from '../../../helpers/cardsCreators';
 import Cards from '../../ui/Cards/Cards';
+import Details, { detailsType } from '../../Details/Details';
 import FormFilter from '../FormFilter/FormFilter';
 
 const ApodSearchSection = () => {
   const dispatch = useDispatch();
   const allApodsStatus = useSelector((state) => state.allApods.status);
   const allApods = useSelector((state) => filterState(state));
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     if (allApodsStatus === 'empty') {
@@ -32,7 +34,18 @@ const ApodSearchSection = () => {
     }
   };
 
-  const cards = cardsCreators.createCardsApod(allApods, Cards);
+  // eslint-disable-next-line no-unused-vars
+  const handleCardClick = (e) => {
+    console.log(e);
+    console.log('click deails');
+    setModalVisible(true);
+  };
+
+  const handleClose = () => {
+    setModalVisible(false);
+  };
+
+  const cards = cardsCreators.createCardsApod(allApods, Cards, 'hola');
 
   return (
     <section className={styles.container}>
@@ -43,6 +56,12 @@ const ApodSearchSection = () => {
         buttonText1="Show all"
       />
       <MySwiperGrid cards={cards} />
+      <Details
+        show={modalVisible}
+        handleClose={handleClose}
+        id="3"
+        type={detailsType.APOD}
+      />
     </section>
   );
 };

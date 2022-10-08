@@ -43,6 +43,20 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
       font-weight: 400;
       font-size: 1em;
     }
+
+    button {
+      background: none;
+      color: f.get-color('primary');
+      border: none;
+      margin: 0;
+      width: -moz-fit-content;
+      width: fit-content;
+      align-self: center;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   .media {
