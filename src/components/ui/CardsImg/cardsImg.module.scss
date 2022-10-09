@@ -4,7 +4,7 @@
 
 $colorTrans: transparentize(f.get-color('primary'), 0.3);
 
-@mixin cutLines($lines: 3){
+@mixin cutLines($lines: 3) {
   // cut the text
   overflow: hidden;
   text-overflow: ellipsis;
@@ -85,7 +85,7 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     align-items: center;
 
     // @include mixin.customMin(400) {
-    //   height: 180px;        
+    //   height: 180px;
     // }
 
     // @include mixin.medium {

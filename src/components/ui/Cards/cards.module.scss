@@ -4,7 +4,7 @@
 
 $colorTrans: transparentize(f.get-color('primary'), 0.3);
 
-@mixin cutLines($lines: 3){
+@mixin cutLines($lines: 3) {
   // cut the text
   overflow: hidden;
   text-overflow: ellipsis;
@@ -68,8 +68,9 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
       font-weight: 400;
       font-size: 1em;
       margin-bottom: 1%;
+
       @include cutLines(3);
-      
+
       // TO limit lines with for IE set the line height and then the number of
       // lines you wanth with height
       // line-height: 1.4em;
@@ -104,7 +105,7 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     align-items: center;
 
     @include mixin.customMin(400) {
-      height: 180px;        
+      height: 180px;
     }
 
     @include mixin.medium {

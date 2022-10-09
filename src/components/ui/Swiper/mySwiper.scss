@@ -17,7 +17,7 @@
   //   width: 610px;
   // }
 
-  @include mixin.customMin(768){
+  @include mixin.customMin(768) {
     width: 97vw;
   }
 
