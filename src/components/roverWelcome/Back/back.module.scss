@@ -51,7 +51,6 @@ $backTransparent: transparentize($color: f.get-color('background'), $amount: 0.3
     box-shadow: 5px 5px 10px $backTransparent, -2px -2px 10px $backTransparent;
     border-radius: 5px;
 
-
     @include mixin.medium {
       background-image: url('./roverCameras2.jpg');
       height: 90%;
