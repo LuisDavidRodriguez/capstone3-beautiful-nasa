@@ -25,7 +25,7 @@ const MySwiper = (props) => {
         className="mySwiper"
         tag="section"
         wrapperTag="ul"
-        slidesPerView="auto"
+        slidesPerView={1.6}
         spaceBetween={0}
         grabCursor
         centeredSlides
@@ -42,38 +42,48 @@ const MySwiper = (props) => {
         }}
         breakpoints={{
           320: {
-            slidesPerView: 1.1,
+            slidesPerView: 1.5,
             spaceBetween: 10,
           },
           // when window width is >= 480px
           480: {
-            slidesPerView: 1.3,
+            slidesPerView: 1.8,
             spaceBetween: 10,
           },
           // when window width is >= 640px
           640: {
-            slidesPerView: 1.5,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
           // when window width is >= 768px
           768: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-
-          900: {
             slidesPerView: 2.2,
             spaceBetween: 10,
           },
 
+          900: {
+            slidesPerView: 2.6,
+            spaceBetween: 15,
+          },
+
           1100: {
-            slidesPerView: 2.5,
-            spaceBetween: 10,
+            slidesPerView: 3,
+            spaceBetween: 15,
           },
 
           1300: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+            slidesPerView: 3.2,
+            spaceBetween: 15,
+          },
+
+          1500: {
+            slidesPerView: 3.5,
+            spaceBetween: 15,
+          },
+
+          1650: {
+            slidesPerView: 3.8,
+            spaceBetween: 20,
           },
 
         }}

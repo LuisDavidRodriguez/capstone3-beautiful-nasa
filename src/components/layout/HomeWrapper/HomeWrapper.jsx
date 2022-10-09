@@ -12,6 +12,9 @@ import * as helper from '../../../helpers/cardsCreators';
 import * as dateHelper from '../../../helpers/dates';
 import Modal from '../../ui/Modal/Modal';
 import MultipleMediaRender from '../../ui/MultipleMediaRender/MultipleMediaRender';
+import DetailsApod from '../../Details/DetailsApod';
+import DetailsRover from '../../Details/DetailsRover';
+import DetailsMedia from '../../Details/DetailsMedia';
 import './homeWrapper.scss';
 
 const title = 'Astronomy Picture of the Day (APOD)';
@@ -91,65 +94,32 @@ const HomeWrapper = () => {
   // create the children for the modal
   if (modalType === cardFamily.APOD) {
     // filter the Id in the database
-    const apod = apodRandom.filter((item) => item.id === modalId)[0];
-    childrenModal = (
-      <section>
-        <article>
-          <p>{apod.date}</p>
-          <h3>{apod.title}</h3>
-          <p>{apod.explanation}</p>
-        </article>
-        <MultipleMediaRender
-          altPicture={apod.title}
-          url={apod.url}
-          mediaType={apod.mediaType}
-        />
-      </section>
-    );
+    try {
+      const [apod] = apodRandom.filter((item) => item.id === modalId);
+      childrenModal = <DetailsApod data={apod} />;
+    } catch (error) {
+      childrenModal = '';
+    }
   }
 
   if (modalType === cardFamily.ROVER) {
     // filter the Id in the database
-    console.log(roverRandom);
-    const rover = roverRandom.filter((item) => item.id === modalId)[0];
-    console.log(rover);
-    childrenModal = (
-      <section>
-        <article>
-          <p>{rover.earth_date}</p>
-          <p>{rover.earth_date}</p>
-          <h3>{rover.rover.name}</h3>
-        </article>
-        <MultipleMediaRender
-          altPicture={rover.rover.name}
-          url={rover.img_src}
-          mediaType="image"
-        />
-      </section>
-    );
+    try {
+      const rover = roverRandom.filter((item) => item.id === modalId)[0];
+      childrenModal = <DetailsRover data={rover} />;
+    } catch (error) {
+      childrenModal = '';
+    }
   }
 
   if (modalType === cardFamily.MEDIA) {
     // filter the Id in the database
-    console.log(nasaImgVideo);
-    const media = nasaImgVideo.items.filter((item) => item.data[0].nasa_id === modalId)[0];
-    const data = media.data[0];
-    const url = media.links[0].href;
-    console.log(media);
-    childrenModal = (
-      <section>
-        <article>
-          <p>{data.nasa_id}</p>
-          <p>{data.date_created}</p>
-          <h3>{data.title}</h3>
-        </article>
-        <MultipleMediaRender
-          altPicture={data.title}
-          url={url}
-          mediaType={data.media_type}
-        />
-      </section>
-    );
+    try {
+      const media = nasaImgVideo.items.filter((item) => item.data[0].nasa_id === modalId)[0];
+      childrenModal = <DetailsMedia data={media} />;
+    } catch (error) {
+      childrenModal = '';
+    }
   }
 
   return (

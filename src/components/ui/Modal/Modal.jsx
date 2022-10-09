@@ -1,11 +1,26 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import classNames from 'classnames/bind';
 import styles from './modal.module.scss';
 
 const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show
-    ? `${styles.modal} ${styles.displayBlock}`
-    : `${styles.modal} ${styles.displayNone}`;
+  const cx = classNames.bind(styles);
+  const body = document.querySelector('body');
+  body.style.overflow = 'auto';
+
+  let showHideClassName = cx({
+    modal: true,
+    displayNone: true,
+  });
+
+  if (show) {
+    showHideClassName = cx({
+      modal: true,
+      displayBlock: true,
+    });
+
+    body.style.overflow = 'hidden';
+  }
 
   return (
     <div className={showHideClassName}>

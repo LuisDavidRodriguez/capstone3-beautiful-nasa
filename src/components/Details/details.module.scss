@@ -1,0 +1,42 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as v;
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  color: f.get-color('primary');
+  min-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  height: 50%;
+}
+
+.infoRover {
+  display: flex;
+  flex-direction: column;
+  color: f.get-color('primary');
+  min-height: 200px;
+  width: 80%;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.date {
+  font-size: 1.3em;
+}
+
+.p1 {
+  font-size: 1em;
+  font-family: v.$fontFamilyLato;
+  max-width: 1000px;
+}
+
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  max-height: 90vh;
+}
