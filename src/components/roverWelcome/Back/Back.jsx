@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './back.module.scss';
-import roverCameras from './roverCameras2.jpg';
 
 const Back = () => (
   <article className={style.infoContainer}>
@@ -23,7 +22,7 @@ const Back = () => (
       <a href="https://en.wikipedia.org/wiki/Curiosity_(rover)" target="_blank" rel="noreferrer">More information about the Rover</a>
     </section>
 
-    <img className={style.image} src={roverCameras} alt="Rover cameras" />
+    <div className={style.image} />
   </article>
 );
 

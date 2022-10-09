@@ -24,7 +24,7 @@ const MySwiperGrid = (props) => {
         className="my-swiper-grid"
         tag="section"
         wrapperTag="ul"
-        slidesPerView={1.1}
+        slidesPerView={1.3}
         grid={{
           rows: 2,
         }}
@@ -32,38 +32,59 @@ const MySwiperGrid = (props) => {
         modules={[Pagination, Grid]}
         breakpoints={{
           320: {
-            slidesPerView: 1.2,
+            slidesPerView: 2,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
           // when window width is >= 480px
           480: {
-            slidesPerView: 1.3,
+            slidesPerView: 2.7,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
           // when window width is >= 640px
           640: {
-            slidesPerView: 1.5,
+            slidesPerView: 2.9,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
           // when window width is >= 768px
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3.2,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
 
           900: {
-            slidesPerView: 2.2,
+            slidesPerView: 3.5,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
 
           1100: {
-            slidesPerView: 2.5,
+            slidesPerView: 4,
             spaceBetween: 10,
+            grid: {
+              rows: 2,
+            },
           },
 
           1300: {
-            slidesPerView: 3,
+            slidesPerView: 5,
             spaceBetween: 15,
+            grid: {
+              rows: 2,
+            },
           },
 
         }}

@@ -1,18 +1,22 @@
 /* eslint-disable no-use-before-define */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDateApod } from '../../../redux/apodApi';
 import { allApodsActions } from '../../../redux/apod';
 import MySwiperGrid from '../../ui/SwiperGrid/SwiperGrid';
 import styles from './apodSearchSection.module.scss';
 import * as cardsCreators from '../../../helpers/cardsCreators';
-import Cards from '../../ui/Cards/Cards';
+import CardsImg from '../../ui/CardsImg/CardsImg';
 import FormFilter from '../FormFilter/FormFilter';
+import DetailsApod from '../../Details/DetailsApod';
+import Modal from '../../ui/Modal/Modal';
 
 const ApodSearchSection = () => {
   const dispatch = useDispatch();
   const allApodsStatus = useSelector((state) => state.allApods.status);
   const allApods = useSelector((state) => filterState(state));
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalId, setModalId] = useState('');
 
   useEffect(() => {
     if (allApodsStatus === 'empty') {
@@ -32,7 +36,27 @@ const ApodSearchSection = () => {
     }
   };
 
-  const cards = cardsCreators.createCardsApod(allApods, Cards);
+  const handleCardClick = (id) => {
+    setModalId(id);
+    setModalVisible(true);
+  };
+
+  const handleClose = () => {
+    setModalVisible(false);
+  };
+
+  let childrenModal = '';
+  if (modalVisible) {
+    // filter the Id in the database
+    try {
+      const [apod] = allApods.filter((item) => item.id === modalId);
+      childrenModal = <DetailsApod data={apod} />;
+    } catch (error) {
+      childrenModal = '';
+    }
+  }
+
+  const cards = cardsCreators.createCardsApod(allApods, CardsImg, handleCardClick);
 
   return (
     <section className={styles.container}>
@@ -42,7 +66,16 @@ const ApodSearchSection = () => {
         buttonHandler1={() => dispatch(allApodsActions.showAll())}
         buttonText1="Show all"
       />
-      <MySwiperGrid cards={cards} />
+      <section className={styles.swiperContainer}>
+        <MySwiperGrid cards={cards} />
+      </section>
+
+      <Modal
+        handleClose={handleClose}
+        show={modalVisible}
+      >
+        {childrenModal}
+      </Modal>
     </section>
   );
 };

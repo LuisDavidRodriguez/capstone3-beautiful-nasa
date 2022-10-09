@@ -1,5 +1,6 @@
 @use '../../../styles/variables' as v;
 @use '../../../styles/functions' as f;
+@use '../../../styles/mixin';
 
 .container {
   width: 100%;
@@ -18,4 +19,16 @@
   font-size: 3em;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.swiperContainer {
+  height: 600px;
+  width: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-bottom: 20px;
+
+  @include mixin.large {
+    height: 670px;
+  }
 }

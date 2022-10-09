@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { fetchRandomApodByQuantity, fetchDateApod } from '../../../redux/apodApi';
@@ -11,7 +10,6 @@ import Cards from '../../ui/Cards/Cards';
 import * as helper from '../../../helpers/cardsCreators';
 import * as dateHelper from '../../../helpers/dates';
 import Modal from '../../ui/Modal/Modal';
-import MultipleMediaRender from '../../ui/MultipleMediaRender/MultipleMediaRender';
 import DetailsApod from '../../Details/DetailsApod';
 import DetailsRover from '../../Details/DetailsRover';
 import DetailsMedia from '../../Details/DetailsMedia';
@@ -58,8 +56,6 @@ const HomeWrapper = () => {
   });
 
   const handleCardClick = (id, family) => {
-    console.log(id);
-    console.log('click details', family);
     setModalId(id);
     setModalType(family);
     setModalVisible(true);

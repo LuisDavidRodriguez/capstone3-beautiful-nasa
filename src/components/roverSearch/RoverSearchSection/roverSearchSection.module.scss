@@ -1,5 +1,6 @@
 @use '../../../styles/functions' as f;
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixin';
 
 .container {
   display: flex;
@@ -39,5 +40,13 @@
   .viewContainer {
     background-color: f.get-color('background');
     width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 600px;
+    padding-bottom: 30px;
+
+    @include mixin.large {
+      height: 700px;
+    }
   }
 }

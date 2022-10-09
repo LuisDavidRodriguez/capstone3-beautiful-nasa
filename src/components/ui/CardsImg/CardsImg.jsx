@@ -1,15 +1,14 @@
 /* eslint-disable prefer-const */
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import styles from './cards.module.scss';
+import styles from './cardsImg.module.scss';
 import defaultPicture from './default_picture.png';
 import MultipleMediaRender from '../MultipleMediaRender/MultipleMediaRender';
 
-const Cards = (props) => {
+const CardsImg = (props) => {
   let {
     topic,
     title,
-    information,
     url,
     altPicture,
     mediaType,
@@ -23,7 +22,6 @@ const Cards = (props) => {
 
   // protect against bigger texts
   title = `${title.substring(0, 30)}`;
-  information = `${information.substring(0, 300)}...`;
   altPicture = `${title.substring(0, 30)}...`;
 
   return (
@@ -31,7 +29,6 @@ const Cards = (props) => {
       <article className={styles.infoContainer}>
         <p className={styles.topic}>{topic}</p>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.info}>{information}</p>
         <button type="button" onClick={() => clickMore(id, cardFamily)}>see details</button>
       </article>
       <div className={styles.media}>
@@ -45,12 +42,11 @@ const Cards = (props) => {
   );
 };
 
-export default Cards;
+export default CardsImg;
 
-Cards.defaultProps = {
+CardsImg.defaultProps = {
   topic: '',
   title: '',
-  information: '',
   url: defaultPicture,
   altPicture: 'default picture',
   mediaType: 'image',
@@ -58,10 +54,9 @@ Cards.defaultProps = {
   cardFamily: 'default Family',
 };
 
-Cards.propTypes = {
+CardsImg.propTypes = {
   topic: PropTypes.string,
   title: PropTypes.string,
-  information: PropTypes.string,
   url: PropTypes.string,
   altPicture: PropTypes.string,
   mediaType: PropTypes.string,
