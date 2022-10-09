@@ -5,4 +5,7 @@
   max-width: fit-content;
   height: auto;
   max-height: 100%;
+
+  /* avoid distortion and match its parent container */
+  object-fit: contain;
 }

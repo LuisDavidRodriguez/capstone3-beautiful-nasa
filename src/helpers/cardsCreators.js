@@ -3,7 +3,7 @@
 // so it is better deal with each information in only this place
 // instead of has in other part of the program again how to clean the data
 
-function createCardsApod(data, Cards) {
+const createCardsApod = (data, Cards, clickMore, cardFamily) => {
   let cards = [];
   if (data === 'loading') {
     // colocamos fakes id for the skeleton
@@ -24,14 +24,16 @@ function createCardsApod(data, Cards) {
         url={apod.url}
         altPicture={apod.title}
         mediaType={apod.mediaType}
+        clickMore={clickMore}
+        cardFamily={cardFamily}
       />
     ));
   }
 
   return cards;
-}
+};
 
-function createCardsRover(data, Cards) {
+function createCardsRover(data, Cards, clickMore, cardFamily) {
   let cards = [];
   if (data === 'loading') {
     // colocamos fakes id for the skeleton
@@ -55,6 +57,8 @@ function createCardsRover(data, Cards) {
           information={createdInfo}
           url={picture.img_src}
           altPicture={createdTitle}
+          clickMore={clickMore}
+          cardFamily={cardFamily}
         />
       );
     });
@@ -63,7 +67,7 @@ function createCardsRover(data, Cards) {
   return cards;
 }
 
-function createCardsMedia(data, Cards) {
+function createCardsMedia(data, Cards, clickMore, cardFamily) {
   // the data is an object with 2 keys items and links
   let cards = [];
   if (Object.keys(data).length === 0) return cards;
@@ -93,6 +97,8 @@ function createCardsMedia(data, Cards) {
           altPicture={info.title}
           url={media.href}
           mediaType={media.render}
+          clickMore={clickMore}
+          cardFamily={cardFamily}
         />
       );
     });

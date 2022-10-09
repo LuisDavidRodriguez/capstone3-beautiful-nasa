@@ -18,7 +18,7 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
   // background-color: darken($color: f.get-color('background'), $amount: 2) ;
   background-color: transparentize($color: f.get-color('background'), $amount: 0.2);
   color: f.get-color('primary');
-  height: 300px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,16 +33,16 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     transform: scale(1.01);
   }
 
-  @include mixin.customMin(400) {
-    height: 350px;
-  }
+  // @include mixin.customMin(400) {
+  //   height: 350px;
+  // }
 
-  @include mixin.small {
-    height: 400px;
-  }
+  // @include mixin.small {
+  //   height: 400px;
+  // }
 
-  @include mixin.medium {
-    height: 450px;
+  @include mixin.large {
+    height: 300px;
   }
 
   .infoContainer {
@@ -50,8 +50,7 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-grow: 1;
-    flex-basis: 140px;
+    height: 100px;
 
     .topic {
       font-weight: 600;
@@ -61,25 +60,6 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
     .title {
       font-size: 1.1em;
       margin-bottom: 1%;
-    }
-
-    .info {
-      font-family: v.$fontFamilyLato;
-      font-weight: 400;
-      font-size: 1em;
-      margin-bottom: 1%;
-
-      @include cutLines(3);
-
-      // TO limit lines with for IE set the line height and then the number of
-      // lines you wanth with height
-      // line-height: 1.4em;
-      // height: 4.2em;
-      // overflow: hidden;
-
-      @include mixin.customMin(400) {
-        @include cutLines(5);
-      }
     }
 
     button {
@@ -98,18 +78,18 @@ $colorTrans: transparentize(f.get-color('primary'), 0.3);
   }
 
   .media {
-    height: 140px;
+    height: 60%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @include mixin.customMin(400) {
-      height: 180px;
-    }
+    // @include mixin.customMin(400) {
+    //   height: 180px;
+    // }
 
-    @include mixin.medium {
-      height: 220px;
-    }
+    // @include mixin.medium {
+    //   height: 220px;
+    // }
   }
 }

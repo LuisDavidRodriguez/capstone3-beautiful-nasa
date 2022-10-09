@@ -6,7 +6,7 @@ import styles from './roverSearchSection.module.scss';
 import RoverManifest from '../RoverManifest/RoverManifest';
 import RoverBoxFilter from '../RoverBoxFilter/RoverBoxFilter';
 import RoverDateFilter from '../RoverDateFilter/RoverDateFilter';
-import RoverViewSection from '../ViewSection/RoverViewSection';
+import RoverViewSection from '../RoverViewSection/RoverViewSection';
 
 function camerasFilter(state) {
   const { photos } = state.revorManifest.data;

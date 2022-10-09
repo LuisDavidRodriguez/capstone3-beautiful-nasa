@@ -18,9 +18,9 @@ const Message = () => (
     <p
       className={styles.p1}
     >
-      This application allows you to HIT 2 API&apos;s fournished by the NASA
+      This application allows you to connect with NASA API&amp;s
     </p>
-    <p className={styles.p1}>Enjoyed the views and the functionality</p>
+    <p className={styles.p1}>Enjoyed the views and functionality</p>
     <p className={styles.p1}>
       Coded By
       {' '}
@@ -33,7 +33,7 @@ const Message = () => (
         Luis David Rodriguez Valades
       </a>
       {' '}
-      powered by the NASA
+      powered by NASA
     </p>
   </div>
 );
