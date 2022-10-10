@@ -27,9 +27,14 @@ The NASA images and media API is organized around REST, You can see and retreive
 ![Mi video-28](https://user-images.githubusercontent.com/105079888/194717289-72c5f378-5e45-4ab7-885f-642b74fec40b.gif)
 
 
+## Added modal Details
+![Mi video-29](https://user-images.githubusercontent.com/105079888/194918590-d5eecd15-8987-487f-9c16-74bafd77cf3e.gif)
+
+
+
 
 ## Live Demo
-[You can see the demo here](https://swiper-home--resilient-crepe-426208.netlify.app/)
+[You can see the demo here](https://development--resilient-crepe-426208.netlify.app/)
 
 ## Loom video! :D
 https://www.loom.com/share/da40a3ba97ce4f9bb6e813d6e2d4071d
