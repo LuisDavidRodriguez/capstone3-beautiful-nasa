@@ -18,9 +18,9 @@ const Message = () => (
     <p
       className={styles.p1}
     >
-      This application allows you to connect with NASA API&amp;s
+      This application allows you to connect with NASA API&apos;s
     </p>
-    <p className={styles.p1}>Enjoyed the views and functionality</p>
+    <p className={styles.p1}>Enjoy the views and functionality</p>
     <p className={styles.p1}>
       Coded By
       {' '}
