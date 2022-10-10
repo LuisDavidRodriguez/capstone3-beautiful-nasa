@@ -50,7 +50,7 @@ CardsImg.defaultProps = {
   url: defaultPicture,
   altPicture: 'default picture',
   mediaType: 'image',
-  clickMore: () => { console.log('default'); },
+  clickMore: () => {},
   cardFamily: 'default Family',
 };
 
