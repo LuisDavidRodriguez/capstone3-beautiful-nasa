@@ -11,32 +11,50 @@
   min-height: 150px;
   min-width: 270px;
   width: 100%;
+  max-height: 100vh;
 
   .welcomeMessage {
     position: absolute;
     width: 95%;
-    max-width: 600px;
-    background-color: transparentize($color: f.get-color('primary'), $amount: 0.2);
-    padding: 3%;
+    max-width: 500px;
+    background-color: transparentize($color: f.get-color('primary'), $amount: 0.25);
+    padding: 1%;
     border-radius: 5px;
     box-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .title {
+      font-family: v.$fontFamilyLato;
+      font-size: 1.2em;
+      margin-bottom: 3px;
+    }
+
+    .p1,
+    .p2,
+    .p3 {
+      font-family: v.$fontFamilyGillSans;
+      font-weight: 600;
+      font-size: 1em;
+      margin-bottom: 3px;
+    }
+
+    .p2 {
+      display: none;
+    }
+
+
+    .a1 {
+      color: f.get-color("accentSecondary");
+    }
+
+    @include mixin.medium {
+      padding: 2%;
+
+      .p2 {
+        display: block;
+      }
+    }
   }
-}
-
-.title {
-  font-family: v.$fontFamilyLato;
-  font-size: 1.2em;
-}
-
-.p1 {
-  font-family: v.$fontFamilyGillSans;
-  font-weight: 600;
-  font-size: 1em;
-}
-
-.a1 {
-  color: f.get-color("accentSecondary");
 }

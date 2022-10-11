@@ -79,11 +79,12 @@ const RoverSearchSection = () => {
             minDate={manifestData.landing_date}
             maxDate={manifestData.max_date}
           />
-          <p>
+          <p className={styles.p1}>
             Total photos this day:
             <strong>{camerasInfo.totalPhotos}</strong>
           </p>
-          {!camerasInfo.arePhotos && <p>no pictures this day, Rover was on vacation! :D </p>}
+          {!camerasInfo.arePhotos
+            && <p className={styles.p1}>no pictures this day, Rover was on vacation! :D </p>}
 
           <h3>Cameras:</h3>
           <ListGroup className=" col-xs-10 col-sm-6">
