@@ -1,4 +1,4 @@
-# Beautiful NASA 😄
+# Beautiful NASA 😄 by Luis David Rodriguez Valades.
 
 ## Description
 This application allows you to HIT 3 API's fournished by the NASA,
