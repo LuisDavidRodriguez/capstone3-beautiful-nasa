@@ -20,8 +20,8 @@ const Message = () => (
     >
       This application allows you to connect with NASA API&apos;s
     </p>
-    <p className={styles.p1}>Enjoy the views and functionality</p>
-    <p className={styles.p1}>
+    <p className={styles.p2}>Enjoy the views and functionality</p>
+    <p className={styles.p3}>
       Coded By
       {' '}
       <a

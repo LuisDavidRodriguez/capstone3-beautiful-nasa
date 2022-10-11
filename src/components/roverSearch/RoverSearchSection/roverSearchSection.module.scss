@@ -24,8 +24,9 @@
     align-items: center;
 
     .infoContainer {
-      width: 40%;
+      width: 80%;
       min-width: 220px;
+      max-width: 500px;
       margin-bottom: 30px;
       display: flex;
       flex-direction: column;
@@ -33,7 +34,12 @@
       padding: 3%;
       border-radius: 5px;
       box-shadow: 5px 5px 5px black;
-      background-color: transparentize($color: f.get-color('accentPrimary'), $amount: 0.1);
+      background-image: url('./az-subtle.png');
+      background-color: transparentize($color: f.get-color('accentSecondary'), $amount: 0.2);
+
+      .p1 {
+        font-weight: 600;
+      }
     }
   }
 
