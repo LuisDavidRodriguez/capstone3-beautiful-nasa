@@ -80,6 +80,3 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - To the NASA!! for that beautiful API's
-- To Nelson Sakwa, since our website is inspired by his template. <br>
-link to the guidelines: https://www.behance.net/sakwadesignstudio?tracking_source=search_users|nelson%20sakwa
-
