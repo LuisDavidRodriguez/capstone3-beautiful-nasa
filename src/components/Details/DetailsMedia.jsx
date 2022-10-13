@@ -9,9 +9,20 @@ const DetailsMedia = (props) => {
   return (
     <>
       <article className={styles.infoContainer}>
-        <p>{data.data[0].center}</p>
+        <p>
+          Center:
+          {' '}
+          {data.data[0].center}
+        </p>
+        <p>
+          NASA ID:
+          {' '}
+          {data.data[0].nasa_id}
+        </p>
         <h3>{data.data[0].title}</h3>
-        <p>{data.data[0].nasa_id}</p>
+        <p>
+          {data.data[0].description}
+        </p>
       </article>
       <MultipleMediaRender
         altPicture={data.data[0].title}

@@ -9,14 +9,29 @@ const DetailsRover = (props) => {
   return (
     <>
       <article className={styles.infoRover}>
-        <p className={styles.title}>{data.id}</p>
+        <h3>{data.rover.name}</h3>
         <p>
-          camera:
+          Id:
+          {' '}
+          {data.id}
+        </p>
+        <p>
+          Martian Sol:
+          {' '}
+          {data.sol}
+        </p>
+        <p>
+          Earth Date:
+          {' '}
+          {data.earth_date}
+        </p>
+        <p>
+          Camera:
+          {' '}
           {data.camera.name}
+          {' -> '}
           {data.camera.full_name}
         </p>
-        <h3>{data.rover.name}</h3>
-        <p>{data.rover.name}</p>
       </article>
       <div className={styles.mediaContainer}>
         <MultipleMediaRender
