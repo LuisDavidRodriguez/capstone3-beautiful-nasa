@@ -1,7 +1,7 @@
 # Beautiful NASA 😄 by Luis David Rodriguez Valades.
 
 ## Description
-This application allows you to HIT 3 API's fournished by the NASA,
+This application allows you to HIT 3 API's fournished by NASA,
 you can retreive information from:
 
 - Astronomy Picture of the Day (APOD)
