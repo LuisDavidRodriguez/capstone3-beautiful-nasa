@@ -80,4 +80,4 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- To the NASA!! for that beautiful API's
+- To the NASA!! for his beautiful API's
