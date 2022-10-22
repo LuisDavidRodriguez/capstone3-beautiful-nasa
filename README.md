@@ -18,6 +18,7 @@ The NASA images and media API is organized around REST, You can see and retreive
 - SASS modules
 - React-Bootstrap
 - Swiper Library
+- Using mobile-first approach
 
 <br />
 
